@@ -1,119 +1,111 @@
 const UFCD = {
-  code: "0754",
-  title: "Processador de Texto",
+  code: "0778",
+  title: "Folha de Cálculo",
   hours: "50 horas",
   action: "26109",
-  driveFolder: "26109/03-0754"
+  driveFolder: "26109/04-0778"
 };
 
 const pendingLinks = {
-  appsScriptUrl: window.UFCD0754_PENDING_LINKS?.appsScriptUrl || "PENDENTE_UFCD0754_APPS_SCRIPT_URL",
-  spreadsheetId: window.UFCD0754_PENDING_LINKS?.spreadsheetId || "PENDENTE_UFCD0754_SPREADSHEET_ID",
+  appsScriptUrl: window.UFCD0778_PENDING_LINKS?.appsScriptUrl || "PENDENTE_UFCD0778_APPS_SCRIPT_URL",
+  spreadsheetId: window.UFCD0778_PENDING_LINKS?.spreadsheetId || "PENDENTE_UFCD0778_SPREADSHEET_ID",
   mentimeterEmbedUrl: "https://www.mentimeter.com/app/presentation/alfbbg1d39wqoma1jbvcvpbirv9hyatr/embed",
   mentimeterParticipationUrl: "https://www.menti.com/ald495rdgkt3",
-  glossaryUrl: /^https?:\/\//i.test(window.UFCD0754_PENDING_LINKS?.glossaryUrl || "") ? window.UFCD0754_PENDING_LINKS.glossaryUrl : "",
-  individualTaskForumUrls: Array.isArray(window.UFCD0754_PENDING_LINKS?.individualTaskForumUrls)
-    ? window.UFCD0754_PENDING_LINKS.individualTaskForumUrls.filter((url) => /^https?:\/\//i.test(url))
+  glossaryUrl: /^https?:\/\//i.test(window.UFCD0778_PENDING_LINKS?.glossaryUrl || "") ? window.UFCD0778_PENDING_LINKS.glossaryUrl : "",
+  individualTaskForumUrls: Array.isArray(window.UFCD0778_PENDING_LINKS?.individualTaskForumUrls)
+    ? window.UFCD0778_PENDING_LINKS.individualTaskForumUrls.filter((url) => /^https?:\/\//i.test(url))
     : [],
-  manualPdf: window.UFCD0754_PENDING_LINKS?.manualPdf || ""
+  manualPdf: window.UFCD0778_PENDING_LINKS?.manualPdf || ""
 };
 
 const topics = [
-  { id: "introducao", title: "Introdução", menuTitle: "Introdução", cardTitle: "Introdução ao processador de texto", area: "Enquadramento", intro: "Organização da UFCD, objetivos, metodologia e forma de construir o documento final.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/introducao.html", showInContents: false },
-  { id: "ambiente-trabalho", title: "Introdução", menuTitle: "Introdução", cardTitle: "Introdução ao processador de texto", intro: "Primeiro contacto com o Word: compreender para que serve um processador de texto, reconhecer a janela principal, inserir texto e utilizar a visualização e a ajuda.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/ambiente-trabalho.html", items: ["Finalidade do processador de texto", "Janela principal do Word", "Inserção de texto com o teclado", "Modos de visualização básicos", "Ajuda e pesquisa de comandos"] },
-  { id: "edicao-texto", title: "Operações básicas", menuTitle: "Operações básicas", cardTitle: "Operações básicas", intro: "Criar, guardar e abrir documentos, selecionar texto, anular e repetir ações.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/edicao-texto.html", items: ["Criação, gravação e abertura de documentos", "Seleção de texto", "Anulação e repetição de ações"] },
-  { id: "formatacao-caracteres-paragrafos", title: "Formatações", menuTitle: "Formatações", cardTitle: "Formatações", intro: "Aplicar formatações ao documento, ao tipo de letra e aos parágrafos; utilizar tabelas predefinidas, listas, limites e sombreados.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/formatacao-caracteres-paragrafos.html", items: ["Formatações globais do documento", "Formatação do tipo de letra", "Formatações de parágrafo", "Utilização das tabelas pré-definidas", "Criação de listas", "Limites e sombreados"] },
-  { id: "ferramentas-revisao", title: "Edição e revisão de texto", menuTitle: "Edição e revisão", cardTitle: "Edição e revisão de texto", intro: "Trabalhar com vários documentos, copiar texto, verificar a ortografia e localizar ou substituir conteúdo.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/ferramentas-revisao.html", items: ["Múltiplos documentos abertos", "Cópia do texto", "Verificação ortográfica", "Comando «localizar e substituir»"] },
-  { id: "impressao-exportacao", title: "Impressão", menuTitle: "Impressão", cardTitle: "Impressão", intro: "Preparar e verificar o documento antes da impressão.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/impressao-exportacao.html" },
-  { id: "tabelas-colunas", title: "Tabulações, tabelas e colunas", menuTitle: "Tabulações e tabelas", cardTitle: "Tabulações, tabelas e colunas", intro: "Organizar informação através de tabulações, tabelas e colunas de texto.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/tabelas-colunas.html" },
-  { id: "imagens-objetos", title: "Melhorar o aspeto visual", menuTitle: "Aspeto visual", cardTitle: "Melhorar o aspeto visual", intro: "Integrar elementos visuais e melhorar a apresentação do documento.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/imagens-objetos.html" },
-  { id: "estruturacao-documentos", title: "Documentos longos", menuTitle: "Documentos longos", cardTitle: "Documentos longos", intro: "Estruturar e organizar documentos extensos para facilitar a consulta e atualização.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/estruturacao-documentos.html" },
-  { id: "boas-praticas", title: "Percorrer rapidamente um documento", menuTitle: "Percorrer documentos", cardTitle: "Percorrer rapidamente um documento", intro: "Utilizar formas rápidas de navegação em documentos extensos.", image: "../assets/img/ufcd0754-capa-site.png", url: "conteudos/boas-praticas.html" }
+  { id: "conceitos-gerais", title: "Conceitos gerais", menuTitle: "Conceitos gerais", cardTitle: "Conceitos gerais", intro: "O que é uma folha de cálculo, principais utilizações e elementos essenciais do ambiente de trabalho.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/conceitos_gerais.html" },
+  { id: "ficheiros-folhas", title: "Ficheiros e folhas", menuTitle: "Ficheiros e folhas", cardTitle: "Ficheiros e folhas", intro: "Criar, abrir, guardar e organizar livros e folhas de cálculo.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/ficheiros_folhas.html" },
+  { id: "celulas", title: "Células", menuTitle: "Células", cardTitle: "Células", intro: "Introduzir, editar, selecionar, copiar, mover e preencher dados nas células.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/celulas.html" },
+  { id: "formatacao-linhas-colunas", title: "Formatação", menuTitle: "Formatação", cardTitle: "Formatação de linhas e colunas", intro: "Formatar células, linhas e colunas e melhorar a apresentação da informação.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/formatacao_linhas_colunas.html" },
+  { id: "formulas", title: "Fórmulas", menuTitle: "Fórmulas", cardTitle: "Fórmulas", intro: "Construir fórmulas e utilizar referências relativas, absolutas e mistas.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/formulas.html" },
+  { id: "impressao", title: "Impressão", menuTitle: "Impressão", cardTitle: "Configuração e impressão", intro: "Definir área de impressão, orientação, margens, escala, cabeçalhos, rodapés e quebras de página.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/impressao.html" },
+  { id: "funcoes", title: "Funções", menuTitle: "Funções", cardTitle: "Funções", intro: "Utilizar funções para calcular, resumir, contar e interpretar informação.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/funcoes.html" },
+  { id: "graficos", title: "Gráficos", menuTitle: "Gráficos", cardTitle: "Gráficos", intro: "Escolher, criar, editar e interpretar gráficos adequados aos dados.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/graficos.html" },
+  { id: "desenho", title: "Desenho e objetos", menuTitle: "Desenho", cardTitle: "Desenho e objetos", intro: "Inserir e organizar formas, caixas de texto, imagens e outros objetos na folha de cálculo.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/desenho.html" },
+  { id: "listas-filtros", title: "Listas e filtros", menuTitle: "Listas e filtros", cardTitle: "Listas, ordenação e filtros", intro: "Estruturar listas, ordenar, filtrar, validar e analisar dados.", image: "../assets/img/ufcd0778-capa-site.png", url: "conteudos/listas_filtros.html" }
 ];
 
 const contentLessons = {
   "ambiente-trabalho": {
-    summary: "Nesta introdução, o formando situa o processador de texto como ferramenta de criação, edição, formatação, revisão e partilha de documentos profissionais. O objetivo é ganhar orientação dentro do Word antes de avançar para operações e formatações mais específicas.",
+    summary: "A folha de cálculo organiza dados em células e permite calcular, analisar e apresentar informação. Nesta etapa, o objetivo é dominar o ambiente de trabalho e introduzir dados de forma correta.",
     sections: [
-      { title: "Para que serve um processador de texto", text: "Um processador de texto permite transformar ideias, apontamentos e informação em documentos legíveis, organizados e prontos a comunicar. No contexto profissional, é usado para cartas, relatórios, atas, currículos, formulários, procedimentos e outros documentos formais.", points: ["Criar documentos novos a partir de uma página em branco ou de um modelo.", "Editar texto sem refazer o documento de início.", "Formatar títulos, parágrafos, listas, tabelas e elementos visuais.", "Rever, guardar, exportar para PDF e partilhar o resultado final."] },
-      { title: "Reconhecer a janela principal do Word", text: "Antes de trabalhar no documento, é importante saber onde estão os comandos principais. A janela do Word organiza as ferramentas por separadores no friso, apresenta a área de escrita ao centro e mostra informação útil na barra de estado.", points: ["Barra de título: identifica o documento aberto.", "Friso: reúne separadores como Base, Inserir, Estrutura, Disposição, Referências, Rever e Ver.", "Área do documento: local onde se escreve e organiza o conteúdo.", "Barra de estado: mostra páginas, palavras, idioma, modos de visualização e zoom."] },
-      { title: "Inserir texto com o teclado", text: "O texto é inserido no ponto onde está o cursor. A escrita deve ser feita de forma contínua, deixando o Word mudar automaticamente de linha. A tecla Enter cria um novo parágrafo; não deve ser usada para forçar espaçamentos visuais.", points: ["Usar Espaço apenas entre palavras.", "Usar Enter para terminar um parágrafo.", "Usar Backspace para apagar à esquerda do cursor e Delete para apagar à direita.", "Ativar marcas de formatação quando for necessário perceber espaços, tabulações e parágrafos."] },
-      { title: "Modos de visualização e ajuda", text: "Os modos de visualização alteram a forma como o documento aparece no ecrã, sem mudar o conteúdo. A ajuda e a pesquisa de comandos permitem encontrar rapidamente uma ferramenta quando ainda não se sabe onde está.", points: ["Usar Esquema de Impressão para ver o documento como será apresentado em papel ou PDF.", "Ajustar o zoom para trabalhar com conforto, sem alterar o tamanho real do texto.", "Utilizar a caixa de pesquisa/ajuda para localizar comandos pelo nome da tarefa."] }
+      { title: "Livro, folhas e células", text: "Um ficheiro de Excel é um livro que pode conter várias folhas. Cada folha é organizada em linhas e colunas; a interseção forma uma célula identificada por um endereço, como B4.", points: ["Distinguir livro e folha.", "Identificar linhas, colunas, células e intervalos.", "Selecionar células adjacentes e não adjacentes."] },
+      { title: "Introdução e edição de dados", text: "As células podem conter texto, números, datas, horas, percentagens e fórmulas. O tipo de dado influencia os cálculos e a apresentação.", points: ["Introduzir e corrigir dados.", "Usar preenchimento automático e séries.", "Evitar espaços ou símbolos que transformem números em texto."] },
+      { title: "Organização do livro", text: "As folhas devem ter nomes claros e os ficheiros devem ser guardados na pasta e com a nomenclatura definidas.", points: ["Renomear, mover, copiar e eliminar folhas.", "Guardar regularmente.", "Confirmar a localização e o nome do ficheiro."] }
     ],
-    practice: "Abrir o Word, identificar no ecrã a barra de título, o friso, a área do documento e a barra de estado; escrever dois pequenos parágrafos; testar o zoom, um modo de visualização e a pesquisa de um comando."
+    practice: "Criar um livro, renomear folhas, introduzir diferentes tipos de dados, criar uma série e guardar o ficheiro com o nome indicado."
   },
-  "edicao-texto": {
-    summary: "As operações básicas permitem iniciar um documento, guardá-lo corretamente, voltar a abri-lo e corrigir ações sem perder o trabalho realizado.",
+  "formatacao-apresentacao": {
+    summary: "A formatação deve tornar os dados mais claros sem alterar o seu valor. Uma folha profissional utiliza formatos consistentes e destaque apenas quando acrescenta significado.",
     sections: [
-      { title: "Criação, gravação e abertura de documentos", text: "Um documento pode ser criado em branco ou a partir de um modelo. Na primeira gravação é necessário escolher a localização, o nome e o formato do ficheiro.", points: ["Usar nomes claros e coerentes.", "Confirmar a pasta antes de guardar.", "Distinguir Guardar de Guardar Como."] },
-      { title: "Seleção de texto", text: "Antes de copiar, eliminar ou formatar, é necessário selecionar o texto. A seleção pode abranger um carácter, uma palavra, uma linha, um parágrafo ou todo o documento.", points: ["Arrastar o rato para selecionar uma parte específica.", "Usar duplo clique para selecionar uma palavra.", "Usar Ctrl+A para selecionar todo o documento."] },
-      { title: "Anulação e repetição de ações", text: "Anular recua nas últimas ações realizadas. Repetir volta a aplicar uma ação anulada ou repete a última operação, conforme o contexto.", points: ["Usar Ctrl+Z para anular.", "Usar Ctrl+Y para repetir ou refazer.", "Guardar regularmente, mesmo quando a gravação automática está ativa."] }
+      { title: "Formatos numéricos", text: "O mesmo valor pode ser apresentado como número, moeda, percentagem, data ou hora. Alterar o formato não altera o valor armazenado.", points: ["Escolher o formato adequado ao conteúdo.", "Controlar casas decimais.", "Distinguir valor e apresentação."] },
+      { title: "Alinhamento e aparência", text: "Tipo de letra, alinhamento, limites e preenchimento ajudam a distinguir títulos, cabeçalhos e dados.", points: ["Manter coerência visual.", "Garantir contraste e legibilidade.", "Evitar excesso de cores e efeitos."] },
+      { title: "Formatação condicional", text: "A formatação condicional aplica formatos quando os dados cumprem regras definidas.", points: ["Criar regras simples.", "Rever o intervalo aplicado.", "Confirmar se o destaque ajuda a interpretar os dados."] }
     ],
-    practice: "Criar um documento, guardá-lo com o nome indicado, escrever e selecionar texto, testar copiar, cortar, colar, anular e repetir."
+    practice: "Formatar uma tabela com títulos, formatos numéricos e uma regra de formatação condicional."
   },
-  "formatacao-caracteres-paragrafos": {
-    summary: "A formatação melhora a legibilidade e cria uma apresentação coerente. Deve ser aplicada com critério, evitando excesso de cores, tipos de letra ou efeitos.",
+  "formulas-referencias": {
+    summary: "As fórmulas começam por = e combinam valores, operadores e referências. As referências corretas permitem copiar fórmulas sem perder a lógica do cálculo.",
     sections: [
-      { title: "Documento, tipo de letra e parágrafo", text: "As formatações globais definem aspetos como margens, orientação e tamanho da página. A formatação do tipo de letra atua nos caracteres; a formatação de parágrafo controla alinhamento, avanços, espaçamento e entrelinha.", points: ["Definir primeiro a estrutura global do documento.", "Usar poucos tipos e tamanhos de letra.", "Aplicar espaçamento de parágrafo em vez de linhas vazias."] },
-      { title: "Tabelas predefinidas e listas", text: "As tabelas predefinidas ajudam a organizar informação em linhas e colunas. As listas com marcas ou numeração apresentam itens e sequências de forma clara.", points: ["Escolher uma tabela adequada ao tipo de informação.", "Usar marcas para itens sem ordem.", "Usar numeração para etapas ou prioridades."] },
-      { title: "Limites e sombreados", text: "Os limites criam linhas em redor de texto, parágrafos ou tabelas. Os sombreados aplicam uma cor de fundo e podem destacar informação importante.", points: ["Aplicar destaque apenas onde acrescenta significado.", "Garantir contraste suficiente entre texto e fundo.", "Manter o mesmo estilo em elementos equivalentes."] }
+      { title: "Construção de fórmulas", text: "As fórmulas podem usar operadores aritméticos e parênteses. A prioridade das operações deve ser controlada para obter o resultado esperado.", points: ["Começar por =.", "Usar referências em vez de repetir valores.", "Testar a fórmula com dados conhecidos."] },
+      { title: "Referências relativas, absolutas e mistas", text: "As referências relativas alteram-se quando a fórmula é copiada. As absolutas mantêm linha e coluna fixas; as mistas fixam apenas uma delas.", points: ["A1: relativa.", "$A$1: absoluta.", "$A1 ou A$1: mista."] },
+      { title: "Erros e verificação", text: "Erros como #DIV/0!, #VALOR! ou #NOME? indicam problemas diferentes que devem ser analisados.", points: ["Ler a mensagem de erro.", "Confirmar referências e operadores.", "Comparar com um cálculo manual simples."] }
     ],
-    practice: "Formatar um título e dois parágrafos, criar uma lista, aplicar limites e sombreado e comparar o resultado antes e depois."
+    practice: "Criar fórmulas, copiá-las e testar referências relativas, absolutas e mistas."
   },
-  "ferramentas-revisao": {
-    summary: "A edição e a revisão permitem melhorar o conteúdo, corrigir erros e trabalhar com maior rapidez em documentos simples ou extensos.",
+  "funcoes-analise": {
+    summary: "As funções simplificam cálculos e permitem resumir informação. A função deve ser escolhida de acordo com a pergunta que se pretende responder.",
     sections: [
-      { title: "Múltiplos documentos abertos e cópia de texto", text: " possível manter vários documentos abertos e alternar entre eles. O texto selecionado pode ser copiado ou movido dentro do mesmo documento ou entre documentos.", points: ["Confirmar qual é o documento ativo.", "Usar Copiar quando o original deve permanecer.", "Usar Cortar quando o conteúdo deve mudar de lugar."] },
-      { title: "Verificação ortográfica", text: "O corretor identifica possíveis erros ortográficos e gramaticais, mas as sugestões devem ser analisadas. O idioma de revisão tem de corresponder ao idioma do texto.", points: ["Definir Português (Portugal) como idioma de revisão.", "Ler a frase completa antes de aceitar uma sugestão.", "Adicionar ao dicionário apenas palavras corretas."] },
-      { title: "Localizar e substituir", text: "Localizar procura palavras ou expressões. Localizar e substituir permite trocar ocorrências de forma individual ou em todo o documento.", points: ["Rever cada ocorrência quando a substituição puder alterar o sentido.", "Usar Mais opções para controlar maiúsculas, palavras completas ou formatação.", "Guardar uma cópia antes de substituições extensas."] }
+      { title: "Funções de cálculo e resumo", text: "SOMA, MÉDIA, MÍNIMO e MÁXIMO permitem resumir conjuntos de valores.", points: ["Selecionar o intervalo correto.", "Interpretar o resultado.", "Verificar células vazias ou valores em texto."] },
+      { title: "Contagem e decisão", text: "CONTAR e CONTAR.VAL distinguem diferentes tipos de conteúdo. A função SE devolve resultados diferentes consoante uma condição.", points: ["Definir a condição de forma clara.", "Usar texto entre aspas.", "Testar casos verdadeiros e falsos."] },
+      { title: "Auditoria dos resultados", text: "Uma folha correta não depende apenas de fórmulas sem erros: os resultados têm de ser plausíveis e coerentes com os dados.", points: ["Comparar totais e subtotais.", "Procurar valores inesperados.", "Confirmar intervalos e critérios."] }
     ],
-    practice: "Abrir dois documentos, copiar um parágrafo entre eles, executar a revisão ortográfica e substituir uma palavra repetida."
+    practice: "Aplicar funções de soma, média, mínimo, máximo, contagem e decisão a um conjunto de dados."
   },
-  "impressao-exportacao": {
-    summary: "Antes de imprimir, é necessário confirmar a apresentação das páginas e escolher apenas as opções adequadas ao resultado pretendido.",
+  "gestao-dados": {
+    summary: "As listas bem organizadas permitem ordenar, filtrar, validar e representar dados de forma eficaz.",
     sections: [
-      { title: "Pré-visualização", text: "A pré-visualização mostra como o documento ficará em papel e permite detetar páginas vazias, cortes, margens inadequadas ou quebras mal colocadas.", points: ["Percorrer todas as páginas.", "Confirmar cabeçalhos, rodapés e numeração.", "Verificar tabelas e imagens junto às margens."] },
-      { title: "Definições de impressão", text: " possível escolher a impressora, o número de cópias, as páginas, a orientação, o tamanho do papel, as margens e a impressão de um ou dos dois lados.", points: ["Imprimir apenas as páginas necessárias.", "Confirmar a orientação Retrato ou Paisagem.", "Usar frente e verso quando for adequado."] },
-      { title: "Verificação final", text: "A impressão deve ser o último passo, depois de guardar e rever o documento. Quando não é necessária uma cópia em papel, o PDF preserva melhor a apresentação para partilha.", points: ["Guardar as alterações antes de imprimir.", "Confirmar a impressora selecionada.", "Gerar primeiro um PDF quando for necessário validar o resultado."] }
+      { title: "Listas, ordenação e filtros", text: "Uma lista deve ter cabeçalhos claros, uma linha por registo e uma coluna por campo. A ordenação reorganiza; o filtro mostra apenas os registos que cumprem critérios.", points: ["Evitar linhas e colunas vazias no interior da lista.", "Selecionar toda a tabela antes de ordenar.", "Remover filtros antes de validar a totalidade dos dados."] },
+      { title: "Validação de dados", text: "A validação limita os valores permitidos e pode apresentar mensagens de entrada e alertas de erro.", points: ["Definir regras adequadas.", "Criar listas de opções quando fizer sentido.", "Testar entradas válidas e inválidas."] },
+      { title: "Gráficos", text: "Os gráficos representam visualmente os dados e devem ser escolhidos de acordo com a comparação pretendida.", points: ["Selecionar apenas os dados necessários.", "Usar título e legendas claros.", "Evitar efeitos que dificultem a leitura."] }
     ],
-    practice: "Abrir a pré-visualização de impressão, identificar as definições disponíveis e explicar quais utilizaria para imprimir apenas duas páginas."
+    practice: "Organizar uma lista, ordenar e filtrar, aplicar validação e criar um gráfico adequado."
   },
-  "tabelas-colunas": {
-    summary: "Tabulações, tabelas e colunas organizam informação de formas diferentes. A escolha depende do tipo e da quantidade de conteúdo.",
+  "impressao": {
+    summary: "A configuração de página permite preparar a folha para impressão ou PDF, evitando cortes e páginas desnecessárias.",
     sections: [
-      { title: "Tabulações", text: "As tabulações alinham texto em posições definidas na régua. Podem ser à esquerda, ao centro, à direita ou decimal e podem incluir carateres de preenchimento.", points: ["Mostrar a régua antes de definir tabulações.", "Escolher o alinhamento adequado aos dados.", "Não substituir tabulações por vários espaços."] },
-      { title: "Tabelas", text: "As tabelas organizam informação em linhas, colunas e células. Podem ser inseridas, redimensionadas, formatadas e alteradas através da adição, eliminação ou união de células.", points: ["Usar uma linha de cabeçalho clara.", "Ajustar larguras ao conteúdo.", "Evitar tabelas excessivamente complexas."] },
-      { title: "Colunas de texto", text: "As colunas distribuem o texto verticalmente, como num jornal ou boletim. As quebras de coluna permitem controlar onde começa a coluna seguinte.", points: ["Selecionar apenas o texto que deve ficar em colunas.", "Definir número, largura e espaçamento.", "Usar uma quebra de coluna quando necessário."] }
+      { title: "Área e disposição", text: "A área de impressão define o que será impresso. Orientação, margens e escala determinam a disposição na página.", points: ["Definir a área de impressão.", "Escolher Retrato ou Paisagem.", "Usar escala sem tornar o conteúdo ilegível."] },
+      { title: "Cabeçalhos, rodapés e títulos", text: "Cabeçalhos e rodapés podem apresentar nome, data e número de página. Linhas ou colunas de títulos podem repetir-se em todas as páginas.", points: ["Inserir informação útil.", "Repetir cabeçalhos quando necessário.", "Confirmar que não existem páginas vazias."] },
+      { title: "Pré-visualização", text: "A pré-visualização é obrigatória antes de imprimir ou exportar para PDF.", points: ["Percorrer todas as páginas.", "Verificar cortes e quebras.", "Confirmar legibilidade e sequência."] }
     ],
-    practice: "Criar um alinhamento com tabulações, inserir uma tabela simples e formatar um pequeno texto em duas colunas."
-  },
-  "imagens-objetos": {
-    summary: "Imagens e outros elementos visuais podem tornar o documento mais claro e apelativo, desde que tenham uma função e não prejudiquem a leitura.",
-    sections: [
-      { title: "Inserir e dimensionar imagens", text: "Uma imagem deve ser inserida no local adequado e redimensionada pelas alças dos cantos para preservar as proporções.", points: ["Utilizar imagens com qualidade suficiente.", "Manter as proporções originais.", "Evitar imagens desfocadas ou decorativas em excesso."] },
-      { title: "Disposição do texto", text: "A disposição controla a relação entre a imagem e o texto. «Em linha com o texto» trata a imagem como um carácter; outras opções, como «Quadrado», permitem que o texto contorne a imagem.", points: ["Escolher a opção de acordo com o resultado pretendido.", "Confirmar a posição depois de editar o texto.", "Usar alinhamento e espaçamento consistentes."] },
-      { title: "Aspeto visual e legibilidade", text: "Formas, caixas de texto, ícones e cores devem apoiar a hierarquia da informação. Um documento profissional mantém consistência e espaço em branco suficiente.", points: ["Criar contraste entre títulos e corpo do texto.", "Alinhar elementos relacionados.", "Rever o documento a diferentes níveis de zoom."] }
-    ],
-    practice: "Inserir uma imagem, testar «Em linha com o texto» e «Quadrado», redimensioná-la e justificar qual opção melhora a página."
-  },
-  "estruturacao-documentos": {
-    summary: "Os documentos longos exigem uma estrutura consistente para poderem ser atualizados, percorridos e compreendidos com facilidade.",
-    sections: [
-      { title: "Títulos e estilos", text: "Os estilos aplicam em conjunto várias características de formatação. Os estilos Título 1, Título 2 e Título 3 criam uma hierarquia que o Word consegue reconhecer.", points: ["Usar Título 1 nas divisões principais.", "Manter níveis de título coerentes.", "Alterar o estilo em vez de formatar cada título manualmente."] },
-      { title: "Quebras, cabeçalhos e rodapés", text: "As quebras controlam a passagem para uma nova página ou secção. Cabeçalhos e rodapés apresentam informação repetida, como título, autor, data ou número de página.", points: ["Usar quebra de página em vez de vários Enter.", "Criar secções apenas quando forem necessárias definições diferentes.", "Verificar a primeira página e as páginas pares e ímpares."] },
-      { title: "Índice automático", text: "O índice automático é criado a partir dos estilos de título. Depois de alterar o documento, deve ser atualizado para apresentar os títulos e números de página corretos.", points: ["Aplicar os estilos antes de inserir o índice.", "Escolher o local adequado para o índice.", "Atualizar toda a tabela antes da entrega."] }
-    ],
-    practice: "Aplicar estilos a três níveis de títulos, inserir uma quebra de página, numerar as páginas e criar um índice automático."
-  },
-  "boas-praticas": {
-    summary: "Num documento extenso, a navegação rápida reduz o tempo de procura e ajuda a verificar a estrutura antes da entrega.",
-    sections: [
-      { title: "Painel de Navegação", text: "O Painel de Navegação apresenta os títulos do documento quando foram utilizados estilos. Um clique num título desloca diretamente para essa parte.", points: ["Ativar o painel no separador Ver.", "Confirmar a hierarquia dos títulos.", "Arrastar títulos apenas quando se pretende reorganizar o documento."] },
-      { title: "Procurar no documento", text: "A pesquisa permite localizar palavras, expressões, títulos, páginas ou outros elementos sem percorrer o documento manualmente.", points: ["Usar Ctrl+F para abrir a pesquisa.", "Escrever uma expressão suficientemente específica.", "Percorrer os resultados e confirmar o contexto."] },
-      { title: "Atalhos de deslocação", text: "O teclado e a barra de deslocamento permitem chegar rapidamente ao início, ao fim ou a diferentes páginas do documento.", points: ["Usar Ctrl+Home para ir ao início.", "Usar Ctrl+End para ir ao fim.", "Combinar pesquisa e Painel de Navegação em documentos longos."] }
-    ],
-    practice: "Abrir um documento longo, ativar o Painel de Navegação, procurar uma expressão e deslocar-se para o início e para o fim usando atalhos."
+    practice: "Definir área de impressão, orientação, margens, escala, cabeçalho e rodapé; verificar todas as páginas."
   }
+};
+
+
+// Compatibilidade com as páginas HTML já existentes no site.
+contentLessons["conceitos-gerais"] = contentLessons["ambiente-trabalho"];
+contentLessons["ficheiros-folhas"] = contentLessons["ambiente-trabalho"];
+contentLessons["celulas"] = contentLessons["ambiente-trabalho"];
+contentLessons["formatacao-linhas-colunas"] = contentLessons["formatacao-apresentacao"];
+contentLessons["formulas"] = contentLessons["formulas-referencias"];
+contentLessons["funcoes"] = contentLessons["funcoes-analise"];
+contentLessons["graficos"] = contentLessons["gestao-dados"];
+contentLessons["listas-filtros"] = contentLessons["gestao-dados"];
+contentLessons["desenho"] = {
+  summary: "Os objetos gráficos podem apoiar a leitura e a comunicação dos dados quando são usados com moderação e intenção.",
+  sections: [
+    { title: "Inserir objetos", text: "É possível inserir formas, caixas de texto, imagens e ícones para complementar a informação apresentada na folha.", points: ["Escolher objetos com função clara.", "Evitar excesso de elementos decorativos.", "Manter consistência visual."] },
+    { title: "Posicionar e dimensionar", text: "Os objetos devem ser redimensionados e posicionados sem esconder dados nem dificultar a utilização da folha.", points: ["Preservar proporções das imagens.", "Alinhar objetos relacionados.", "Confirmar a visualização e a impressão."] },
+    { title: "Agrupar e organizar", text: "Objetos relacionados podem ser alinhados, distribuídos e agrupados para facilitar a movimentação e manter a composição estável.", points: ["Usar alinhamento e distribuição.", "Agrupar apenas elementos relacionados.", "Verificar a ordem dos objetos."] }
+  ],
+  practice: "Inserir uma forma, uma caixa de texto e uma imagem; alinhar os elementos, ajustar o tamanho e confirmar que não ocultam dados."
 };
 
 const contentMenuGroups = topics
@@ -126,39 +118,39 @@ const contentMenuGroups = topics
 
 const DEFAULT_APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzRu_6tZGkRsVmeIZVUTBN9S3j6o79krvKbHfQiHoz7wXXznhrehNedBRRldq-WtfD3/exec";
 const DEFAULT_APPS_SCRIPT_SPREADSHEET_ID = "14xWArQOzb-1fZ4QxZXjuoJK1dxhjWmbwWmF7lsK-a9o";
-const APPS_SCRIPT_WEB_APP_URL = window.UFCD0754_APPS_SCRIPT_URL || DEFAULT_APPS_SCRIPT_WEB_APP_URL;
-const APPS_SCRIPT_SPREADSHEET_ID = window.UFCD0754_SPREADSHEET_ID || DEFAULT_APPS_SCRIPT_SPREADSHEET_ID;
+const APPS_SCRIPT_WEB_APP_URL = window.UFCD0778_APPS_SCRIPT_URL || DEFAULT_APPS_SCRIPT_WEB_APP_URL;
+const APPS_SCRIPT_SPREADSHEET_ID = window.UFCD0778_SPREADSHEET_ID || DEFAULT_APPS_SCRIPT_SPREADSHEET_ID;
 
 const activities = [
   { id: "controlo-teams", title: "Partilha de ecrã", menuTitle: "Partilha de ecrã", intro: "Tabela simples para acompanhar a participação prática nas sessões síncronas.", url: "atividades/controlo-teams.html" },
-  { id: "mentimeter-inicial", title: "Escreve 3 palavras", menuTitle: "Brainstorming", intro: "Quando pensas num processador de texto, que três palavras te vêm à cabeça?", url: "atividades/mentimeter-inicial.html", focus: "Nuvem de palavras inicial", duration: "", product: "Resposta no Mentimeter: três palavras associadas a processador de texto.", mentimeterUrl: pendingLinks.mentimeterEmbedUrl, participationUrl: pendingLinks.mentimeterParticipationUrl, qrCode: "assets/img/mentimeter_qr_code_0754.png", steps: [{ title: "Pergunta", text: "Quando pensas num processador de texto, que três palavras te vêm à cabeça?" }], evidence: ["Nuvem de palavras inicial"] },
-  { id: "tarefas-grupo", title: "Glossário - Tarefas de Grupo", menuTitle: "Tarefas de Grupo", intro: "Tarefas de grupo para construir vocabulário técnico no glossário do Moodle.", url: "atividades/tarefas-grupo.html", focus: "Glossário colaborativo", duration: "A partir do segundo dia", product: "Definição curta, exemplo prático e aplicação ao documento final.", steps: [{ title: "Distribuir funções", text: "Cada grupo recolhe, escreve, revê e publica a sua entrada." }, { title: "Definir o conceito", text: "A definição deve ser simples, correta e aplicada ao processador de texto." }, { title: "Publicar no Moodle", text: "A entrada fica registada no glossário indicado pela formadora." }], evidence: ["Entrada no glossário", "Exemplo prático", "Revisão pelos colegas"] },
-  { id: "tarefas-individuais", title: "Tarefas Individuais", intro: "Resumo das tarefas práticas; as instruções completas são disponibilizadas em PDF.", url: "atividades/tarefas-individuais.html", focus: "Trabalho individual", duration: "A partir do segundo dia", product: "Ficheiros práticos guardados na Drive e registos específicos no Moodle.", steps: [{ title: "Ler o enunciado", text: "Confirmar o objetivo e consultar o PDF da tarefa." }, { title: "Usar o ficheiro indicado", text: "Abrir o ficheiro prático da tarefa e aplicar as operações indicadas." }, { title: "Guardar", text: "Guardar o ficheiro na estrutura definida pela formadora." }], evidence: ["Documento atualizado", "Versão guardada na Drive"] },
-  { id: "projeto-final-apresentacao", title: "Projeto Final - Documento Profissional", menuTitle: "Projeto Final", intro: "Documento profissional único, desenvolvido, revisto entre pares, finalizado em DOCX/PDF e apresentado individualmente.", url: "atividades/projeto-final-apresentacao.html", focus: "Projeto individual", duration: "TI11 e TI12", product: "Documento editável final, PDF, reflexão final, ligação de leitura testada e apresentação até 5 minutos.", steps: [{ title: "Desenvolver", text: "Construir o documento profissional com a estrutura e os requisitos técnicos definidos no enunciado." }, { title: "Rever entre pares", text: "Receber feedback de um colega e decidir que sugestões integrar." }, { title: "Finalizar", text: "Aplicar melhorias, atualizar campos, verificar acessibilidade e exportar para PDF." }, { title: "Apresentar", text: "Preparar uma apresentação individual até 5 minutos." }], evidence: ["DOCX final", "PDF final", "Reflexão final", "Ligação de leitura testada", "Apresentação individual"] }
+  { id: "mentimeter-inicial", title: "Escreve 3 palavras", menuTitle: "Brainstorming", intro: "Quando pensas numa folha de cálculo, que três palavras te vêm à cabeça?", url: "atividades/mentimeter-inicial.html", focus: "Nuvem de palavras inicial", duration: "", product: "Resposta no Mentimeter: três palavras associadas a folha de cálculo.", mentimeterUrl: pendingLinks.mentimeterEmbedUrl, participationUrl: pendingLinks.mentimeterParticipationUrl, qrCode: "assets/img/mentimeter_qr_code_0778.png", steps: [{ title: "Pergunta", text: "Quando pensas numa folha de cálculo, que três palavras te vêm à cabeça?" }], evidence: ["Nuvem de palavras inicial"] },
+  { id: "tarefas-grupo", title: "Glossário - Tarefas de Grupo", menuTitle: "Tarefas de Grupo", intro: "Tarefas de grupo para construir vocabulário técnico no Glossário do Moodle.", url: "atividades/tarefas-grupo.html", focus: "Glossário colaborativo", duration: "A partir do segundo dia", product: "Definição curta e exemplo prático aplicado à folha de cálculo.", steps: [{ title: "Distribuir", text: "Cada grupo trabalha o termo atribuído." }, { title: "Definir", text: "Escrever uma definição simples e correta." }, { title: "Exemplificar", text: "Acrescentar um exemplo aplicado ao Excel." }, { title: "Publicar", text: "Rever e publicar no Glossário do Moodle." }], evidence: ["Entrada no glossário", "Exemplo prático", "Revisão pelos colegas"] },
+  { id: "tarefas-individuais", title: "Tarefas Individuais", intro: "Resumo das tarefas práticas realizadas nos livros Excel; as instruções completas são disponibilizadas em PDF.", url: "atividades/tarefas-individuais.html", focus: "Trabalho individual", duration: "A partir do segundo dia", product: "Livros Excel concluídos e guardados na Drive.", steps: [{ title: "Ler", text: "Consultar o enunciado e o PDF da tarefa." }, { title: "Realizar", text: "Aplicar os procedimentos no livro indicado." }, { title: "Verificar", text: "Confirmar fórmulas, resultados e apresentação." }, { title: "Guardar", text: "Guardar com o nome e na pasta definidos." }], evidence: ["Livro Excel atualizado", "Versão guardada na Drive"] },
+  { id: "projeto-final-apresentacao", title: "Projeto Final - Solução em Folha de Cálculo", menuTitle: "Projeto Final", intro: "Livro Excel funcional que integra organização, cálculos, análise, apresentação e preparação para impressão.", url: "atividades/projeto-final-apresentacao.html", focus: "Projeto individual", duration: "TI08 a TI12", product: "Livro Excel final, PDF, reflexão final e apresentação breve.", steps: [{ title: "Planear", text: "Escolher e estruturar o contexto do projeto." }, { title: "Construir", text: "Organizar dados e aplicar fórmulas, funções, formatação e análise." }, { title: "Rever", text: "Validar dados, cálculos, gráficos e impressão." }, { title: "Partilhar", text: "Guardar, apresentar e refletir sobre o resultado." }], evidence: ["XLSX final", "PDF final", "Reflexão final", "Apresentação individual"] }
 ];
 
 const evaluations = [
-  { id: "avaliacao-diagnostica", title: "Avaliação Diagnóstica", menuTitle: "Diagnóstica", intro: "Avaliação inicial dos conhecimentos sobre processador de texto e documentos profissionais.", url: "avaliacoes/avaliacao-diagnostica.html", children: ["resultados-diagnostica"], embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0754/00-diagnostico.html", embedTitle: "DIAG_1" },
+  { id: "avaliacao-diagnostica", title: "Avaliação Diagnóstica", menuTitle: "Diagnóstica", intro: "Avaliação inicial dos conhecimentos sobre folha de cálculo, dados, fórmulas e funções.", url: "avaliacoes/avaliacao-diagnostica.html", children: ["resultados-diagnostica"], embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0778/00-diagnostico.html", embedTitle: "DIAG_1" },
   { id: "resultados-diagnostica", parentId: "avaliacao-diagnostica", title: "Resultados da Avaliação Diagnóstica", menuTitle: "Resultados", intro: "Leitura global das respostas recolhidas na avaliação diagnóstica.", url: "avaliacoes/resultados-diagnostica.html" },
-  { id: "avaliacao-sumativa", title: "Avaliação Sumativa", menuTitle: "Sumativa", intro: "Avaliação final das aprendizagens da UFCD 0754.", url: "avaliacoes/avaliacao-sumativa.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0754/02-sumativa.html", embedTitle: "SUM_1" },
-  { id: "autoavaliacao-final", title: "Autoavaliação Final", menuTitle: "Autoavaliação", intro: "Reflexão final sobre as competências desenvolvidas, comparável com a avaliação diagnóstica.", url: "avaliacoes/autoavaliacao-final.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0754/04-autoavaliacao-final.html", embedTitle: "AUTO_1" },
-  { id: "avaliacao-entre-pares", title: "Avaliação Entre Pares - Auditoria", menuTitle: "Entre pares", intro: "Auditoria de qualidade ao projeto final de um colega.", url: "avaliacoes/avaliacao-entre-pares.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0754/03-entre-pares.html", embedTitle: "Auditoria de qualidade" },
-  { id: "avaliacao-formacao", title: "Avaliação da Formação", menuTitle: "Formação", intro: "Feedback sobre a qualidade da formação, separado da autoavaliação das aprendizagens.", url: "avaliacoes/avaliacao-formacao.html", embedUrl: "https://avaliacoes-formacao.netlify.app/avaliacao-formacao.html?codigo_ufcd=0754", embedTitle: "Avaliação da formação" }
+  { id: "avaliacao-sumativa", title: "Avaliação Sumativa", menuTitle: "Sumativa", intro: "Avaliação final das aprendizagens da UFCD 0778.", url: "avaliacoes/avaliacao-sumativa.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0778/02-sumativa.html", embedTitle: "SUM_1" },
+  { id: "autoavaliacao-final", title: "Autoavaliação Final", menuTitle: "Autoavaliação", intro: "Reflexão final sobre as competências desenvolvidas, comparável com a avaliação diagnóstica.", url: "avaliacoes/autoavaliacao-final.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0778/04-autoavaliacao-final.html", embedTitle: "AUTO_1" },
+  { id: "avaliacao-entre-pares", title: "Avaliação Entre Pares - Auditoria", menuTitle: "Entre pares", intro: "Auditoria de qualidade ao projeto final de um colega.", url: "avaliacoes/avaliacao-entre-pares.html", embedUrl: "https://avaliacoes-formacao.netlify.app/ufcd-0778/03-entre-pares.html", embedTitle: "Auditoria de qualidade" },
+  { id: "avaliacao-formacao", title: "Avaliação da Formação", menuTitle: "Formação", intro: "Feedback sobre a qualidade da formação, separado da autoavaliação das aprendizagens.", url: "avaliacoes/avaliacao-formacao.html", embedUrl: "https://avaliacoes-formacao.netlify.app/avaliacao-formacao.html?codigo_ufcd=0778", embedTitle: "Avaliação da formação" }
 ];
 
 const groupTasks = [
-  { title: "TG01 - Ambiente do processador de texto", topic: "Ambiente", url: "atividades/tarefas-grupo.html", intro: "Definir conceitos essenciais da interface e da gestão inicial de documentos.", words: [["Faixa de opções", "Grupo 1"], ["Documento", "Grupo 2"], ["Modelo", "Grupo 3"], ["Guardar como", "Grupo 4"]] },
-  { title: "TG02 - Edição de texto", topic: "Edição", url: "atividades/tarefas-grupo.html", intro: "Clarificar ações de edição usadas na produção de texto.", words: [["Selecionar", "Grupo 1"], ["Copiar", "Grupo 2"], ["Substituir", "Grupo 3"], ["Anular", "Grupo 4"]] },
-  { title: "TG03 - Formatação de texto", topic: "Formatação", url: "atividades/tarefas-grupo.html", intro: "Construir definições sobre formatação de caracteres e parágrafos.", words: [["Tipo de letra", "Grupo 1"], ["Alinhamento", "Grupo 2"], ["Espaçamento", "Grupo 3"], ["Lista", "Grupo 4"]] },
-  { title: "TG04 - Estilos e estrutura", topic: "Estrutura", url: "atividades/tarefas-grupo.html", intro: "Relacionar estilos com documentos organizados e fáceis de atualizar.", words: [["Estilo", "Grupo 1"], ["Título", "Grupo 2"], ["Cabeçalho", "Grupo 3"], ["Índice automático", "Grupo 4"]] },
-  { title: "TG05 - Tabelas", topic: "Tabelas", url: "atividades/tarefas-grupo.html", intro: "Definir termos usados na criação e formatação de tabelas.", words: [["Tabela", "Grupo 1"], ["Linha", "Grupo 2"], ["Coluna", "Grupo 3"], ["Célula", "Grupo 4"]] },
-  { title: "TG06 - Imagens e objetos", topic: "Objetos", url: "atividades/tarefas-grupo.html", intro: "Explorar elementos gráficos e respetiva integração no texto.", words: [["Imagem", "Grupo 1"], ["Legenda", "Grupo 2"], ["Disposição do texto", "Grupo 3"], ["Caixa de texto", "Grupo 4"]] },
-  { title: "TG07 - Revisão", topic: "Revisão", url: "atividades/tarefas-grupo.html", intro: "Definir ferramentas de revisão e correção de documentos.", words: [["Corretor ortográfico", "Grupo 1"], ["Comentário", "Grupo 2"], ["Controlar alterações", "Grupo 3"], ["Comparar documentos", "Grupo 4"]] },
-  { title: "TG08 - Paginação", topic: "Paginação", url: "atividades/tarefas-grupo.html", intro: "Organizar conceitos ligados à apresentação por páginas.", words: [["Margem", "Grupo 1"], ["Orientação", "Grupo 2"], ["Quebra de página", "Grupo 3"], ["Numeração", "Grupo 4"]] },
-  { title: "TG09 - Exportação", topic: "Exportação", url: "atividades/tarefas-grupo.html", intro: "Clarificar formatos e cuidados antes da partilha.", words: [["PDF", "Grupo 1"], ["Impressão", "Grupo 2"], ["Compatibilidade", "Grupo 3"], ["Partilha", "Grupo 4"]] },
-  { title: "TG10 - Qualidade visual", topic: "Qualidade", url: "atividades/tarefas-grupo.html", intro: "Identificar critérios de clareza e coerência visual.", words: [["Consistência", "Grupo 1"], ["Legibilidade", "Grupo 2"], ["Hierarquia visual", "Grupo 3"], ["Alinhamento", "Grupo 4"]] },
-  { title: "TG11 - Preparação da apresentação final", topic: "Apresentação", url: "atividades/tarefas-grupo.html", intro: "Preparar a explicação do processo seguido no projeto final.", words: [["Síntese", "Grupo 1"], ["Evidência", "Grupo 2"], ["Versão final", "Grupo 3"], ["Reflexão", "Grupo 4"]] },
-  { title: "TG12 - Revisão entre pares do projeto", topic: "Revisão entre pares", url: "atividades/tarefas-grupo.html", intro: "Cada elemento revê o projeto de um colega, verificando organização, correção, qualidade visual, funcionamento, conteúdo e cumprimento dos requisitos.", words: [["Organização", "Grupo 1"], ["Correção", "Grupo 2"], ["Qualidade visual", "Grupo 3"], ["Cumprimento dos requisitos", "Grupo 4"]] }
+  { title: "TG01 - Ambiente da folha de cálculo", topic: "Ambiente", url: "atividades/tarefas-grupo.html", intro: "Conceitos fundamentais do ambiente de trabalho.", words: [["Livro", "Grupo 1"], ["Folha", "Grupo 2"], ["Célula", "Grupo 3"], ["Intervalo", "Grupo 4"]] },
+  { title: "TG02 - Introdução de dados", topic: "Dados", url: "atividades/tarefas-grupo.html", intro: "Tipos de dados e preenchimento.", words: [["Texto", "Grupo 1"], ["Número", "Grupo 2"], ["Data", "Grupo 3"], ["Série", "Grupo 4"]] },
+  { title: "TG03 - Formatação", topic: "Formatação", url: "atividades/tarefas-grupo.html", intro: "Apresentação e leitura da informação.", words: [["Formato numérico", "Grupo 1"], ["Alinhamento", "Grupo 2"], ["Limite", "Grupo 3"], ["Preenchimento", "Grupo 4"]] },
+  { title: "TG04 - Fórmulas", topic: "Fórmulas", url: "atividades/tarefas-grupo.html", intro: "Construção de cálculos.", words: [["Fórmula", "Grupo 1"], ["Operador", "Grupo 2"], ["Referência", "Grupo 3"], ["Precedência", "Grupo 4"]] },
+  { title: "TG05 - Referências", topic: "Referências", url: "atividades/tarefas-grupo.html", intro: "Comportamento das referências ao copiar fórmulas.", words: [["Referência relativa", "Grupo 1"], ["Referência absoluta", "Grupo 2"], ["Referência mista", "Grupo 3"], ["Preenchimento automático", "Grupo 4"]] },
+  { title: "TG06 - Funções", topic: "Funções", url: "atividades/tarefas-grupo.html", intro: "Funções de cálculo e resumo.", words: [["SOMA", "Grupo 1"], ["MÉDIA", "Grupo 2"], ["MÍNIMO", "Grupo 3"], ["MÁXIMO", "Grupo 4"]] },
+  { title: "TG07 - Contagem e decisão", topic: "Análise", url: "atividades/tarefas-grupo.html", intro: "Funções de contagem e decisão.", words: [["CONTAR", "Grupo 1"], ["CONTAR.VAL", "Grupo 2"], ["SE", "Grupo 3"], ["Condição", "Grupo 4"]] },
+  { title: "TG08 - Listas", topic: "Listas", url: "atividades/tarefas-grupo.html", intro: "Organização de dados em listas.", words: [["Registo", "Grupo 1"], ["Campo", "Grupo 2"], ["Cabeçalho", "Grupo 3"], ["Tabela", "Grupo 4"]] },
+  { title: "TG09 - Ordenação e filtros", topic: "Gestão de dados", url: "atividades/tarefas-grupo.html", intro: "Seleção e reorganização da informação.", words: [["Ordenação", "Grupo 1"], ["Filtro", "Grupo 2"], ["Critério", "Grupo 3"], ["Filtro personalizado", "Grupo 4"]] },
+  { title: "TG10 - Validação e gráficos", topic: "Análise visual", url: "atividades/tarefas-grupo.html", intro: "Controlo da introdução de dados e representação visual.", words: [["Validação de dados", "Grupo 1"], ["Lista pendente", "Grupo 2"], ["Gráfico", "Grupo 3"], ["Série de dados", "Grupo 4"]] },
+  { title: "TG11 - Impressão", topic: "Impressão", url: "atividades/tarefas-grupo.html", intro: "Preparação da folha para impressão.", words: [["Área de impressão", "Grupo 1"], ["Escala", "Grupo 2"], ["Quebra de página", "Grupo 3"], ["Cabeçalho", "Grupo 4"]] },
+  { title: "TG12 - Revisão entre pares", topic: "Qualidade", url: "atividades/tarefas-grupo.html", intro: "Revisão do projeto final de um colega.", words: [["Exatidão", "Grupo 1"], ["Consistência", "Grupo 2"], ["Legibilidade", "Grupo 3"], ["Verificação", "Grupo 4"]] }
 ];
 
 const glossaryUrl = pendingLinks.glossaryUrl;
@@ -168,97 +160,71 @@ const individualTasks = [
   {
     "id": "tarefa-individual-1",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI1 - Registar as expetativas iniciais",
-    "intro": "Identificar as expetativas, os conhecimentos prévios e as metas pessoais para a aprendizagem do processador de texto.",
-    "objective": "Identificar as expetativas, os conhecimentos prévios e as metas pessoais para a aprendizagem do processador de texto.",
+    "title": "TI1 - Criar e organizar um livro de Excel",
+    "intro": "Criar um livro de Excel, organizar as folhas e aplicar procedimentos corretos de gravação e identificação.",
+    "objective": "Criar um livro de Excel, organizar as folhas e aplicar procedimentos corretos de gravação e identificação.",
     "steps": [
       {
-        "title": "Criar",
-        "text": "Criar um documento para registar as expetativas iniciais e guardá-lo na pasta individual da Drive partilhada com a formadora."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
-        "title": "Indicar",
-        "text": "Indicar o nome e escrever o título «As minhas expetativas»."
+        "title": "Realizar",
+        "text": "Abrir o Livro 1, organizar as folhas, alterar nomes e cores dos separadores e guardar a primeira versão."
       },
       {
-        "title": "Responder",
-        "text": "Responder, num texto entre 80 e 120 palavras: o que já sei fazer no Word; o que quero aprender; em que situações pretendo utilizar estas aprendizagens; e qual poderá ser a minha principal dificuldade."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
-        "title": "Rever",
-        "text": "Rever o texto antes de guardar, corrigindo a ortografia e a pontuação."
-      },
-      {
-        "title": "Confirmar",
-        "text": "Confirmar que o documento está visível na pasta partilhada com a formadora."
+        "title": "Guardar",
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "",
-    "evidence": "O documento com as expetativas iniciais, guardado na pasta partilhada da Drive, constitui o registo desta tarefa.",
-    "checklist": [
-      "Texto entre 80 e 120 palavras.",
-      "Conhecimentos prévios identificados.",
-      "Metas de aprendizagem indicadas.",
-      "Documento revisto e guardado na pasta partilhada da Drive."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI01.pdf",
     "workFiles": [
       {
-        "title": "Documento de expetativas iniciais",
-        "expectedName": "Criado pelo/a formando/a",
-        "available": false,
-        "note": "Criado diretamente pelo/a formando/a; não há ficheiro interativo para descarregar."
+        "number": "1",
+        "title": "Livro 1 - Primeiros Passos",
+        "expectedName": "UFCD0778_Livro1_Primeiros_Passos.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro1_Primeiros_Passos.xlsx",
+        "available": true
       }
     ]
   },
   {
     "id": "tarefa-individual-2",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI2 - Conhecer o Word",
-    "intro": "Explorar o ambiente do Word e executar corretamente as operações fundamentais.",
-    "objective": "Explorar o ambiente do Word e executar corretamente as operações fundamentais.",
+    "title": "TI2 - Introduzir, editar e preencher dados",
+    "intro": "Introduzir e editar diferentes tipos de dados e utilizar preenchimento automático e séries.",
+    "objective": "Introduzir e editar diferentes tipos de dados e utilizar preenchimento automático e séries.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir «Bem-vindo ao Word.docx» e guardar uma cópia como «2026-07_01_Bem-vindo_PrimeiroNome.docx»."
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Realizar todas as experiências propostas no próprio documento."
+        "text": "Abrir a versão concluída na TI01, criar uma nova cópia e realizar as propostas de introdução, edição e preenchimento de dados."
       },
       {
-        "title": "Realizar",
-        "text": "Identificar o friso, os separadores, os grupos de comandos, a Barra de Ferramentas de Acesso Rápido, a barra de estado, o zoom e os modos de visualização."
-      },
-      {
-        "title": "Executar",
-        "text": "Executar operações de seleção, copiar, cortar, colar, anular e repetir, aplicando comandos adequados ao contexto."
-      },
-      {
-        "title": "Realizar",
-        "text": "Comparar o resultado com o modelo de referência e corrigir omissões."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar o ficheiro na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar, em 2 a 4 frases, a diferença entre «Guardar» e «Guardar como» e indicar uma decisão tomada durante a tarefa.",
-    "evidence": "Ficheiro 01 concluído nos dois locais e registo da aprendizagem no Moodle.",
-    "checklist": [
-      "Tutorial integralmente realizado.",
-      "Resultado comparado com o modelo.",
-      "Nome e localização do ficheiro corretos."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI02.pdf",
     "workFiles": [
       {
-        "number": "01",
-        "title": "Bem-vindo ao Word",
-        "expectedName": "01_Bem-vindo_ao_Word.docx",
-        "wordUrl": "assets/ficheiros/Word/01_Bem-vindo_ao_Word.docx",
+        "number": "1",
+        "title": "Livro 1 - Primeiros Passos",
+        "expectedName": "UFCD0778_Livro1_Primeiros_Passos.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro1_Primeiros_Passos.xlsx",
         "available": true
       }
     ]
@@ -266,58 +232,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-3",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI3 - Formatar e organizar o texto",
-    "intro": "Aplicar uma hierarquia visual coerente e organizar informação através de listas.",
-    "objective": "Aplicar uma hierarquia visual coerente e organizar informação através de listas.",
+    "title": "TI3 - Formatar células, linhas e colunas",
+    "intro": "Aplicar formatos numéricos e visuais adequados e ajustar células, linhas e colunas.",
+    "objective": "Aplicar formatos numéricos e visuais adequados e ajustar células, linhas e colunas.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Formatação» e guardar como «2026-07_02_Formatacao_PrimeiroNome.docx»."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Aplicar formatação de caracteres, alinhamentos, espaçamento, entrelinha, avanços, limites, sombreado, Pincel de Formatação e estilos."
+        "text": "Abrir o Livro 2, aplicar os formatos indicados e guardar a primeira versão formatada."
       },
       {
-        "title": "Realizar",
-        "text": "Realizar «Listas» e guardar como «2026-07_03_Listas_PrimeiroNome.docx»."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar uma lista com marcas, uma lista numerada e uma lista multinível com, pelo menos, dois níveis."
-      },
-      {
-        "title": "Realizar",
-        "text": "Personalizar a numeração ou as marcas e corrigir níveis incoerentes."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar os dois ficheiros na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Identificar três decisões de formatação e explicar quando deve ser utilizada uma lista multinível.",
-    "evidence": "Ficheiros 02 e 03 concluídos nos dois locais e registo no Moodle.",
-    "checklist": [
-      "Formatação de caracteres e parágrafos completa.",
-      "Hierarquia visual coerente.",
-      "Três tipos de lista corretamente construídos.",
-      "Dois ficheiros guardados com os nomes corretos."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI03.pdf",
     "workFiles": [
       {
-        "number": "02",
-        "title": "Formatação",
-        "expectedName": "02_Formatação.docx",
-        "wordUrl": "assets/ficheiros/Word/02_Formatação.docx",
-        "available": true
-      },
-      {
-        "number": "03",
-        "title": "Listas",
-        "expectedName": "03_Listas.docx",
-        "wordUrl": "assets/ficheiros/Word/03_Listas.docx",
+        "number": "2",
+        "title": "Livro 2 - Formatação e Apresentação",
+        "expectedName": "UFCD0778_Livro2_Formatacao_Apresentacao.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro2_Formatacao_Apresentacao.xlsx",
         "available": true
       }
     ]
@@ -325,55 +268,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-4",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI4 - Rever e corrigir um documento",
-    "intro": "Rever um texto de forma crítica, utilizando ferramentas de edição e correção.",
-    "objective": "Rever um texto de forma crítica, utilizando ferramentas de edição e correção.",
+    "title": "TI4 - Organizar folhas e preparar para impressão",
+    "intro": "Consolidar a apresentação do livro e preparar as folhas para impressão e exportação para PDF.",
+    "objective": "Consolidar a apresentação do livro e preparar as folhas para impressão e exportação para PDF.",
     "steps": [
       {
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+      },
+      {
         "title": "Realizar",
-        "text": "Realizar «Revisão» e guardar como «2026-07_04_Revisao_PrimeiroNome.docx»."
+        "text": "Abrir a versão concluída na TI03, criar uma nova cópia, aplicar formatação condicional e configurar a impressão."
       },
       {
-        "title": "Utilizar",
-        "text": "Utilizar «Localizar» e efetuar pelo menos três substituições, verificando cada ocorrência."
-      },
-      {
-        "title": "Executar",
-        "text": "Executar a revisão ortográfica e gramatical sem aceitar automaticamente todas as sugestões."
-      },
-      {
-        "title": "Melhorar",
-        "text": "Melhorar três expressões com sinónimos e reorganizar dois excertos através de cortar, copiar e colar."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir três comentários com propostas concretas de melhoria."
-      },
-      {
-        "title": "Ativar",
-        "text": "Ativar o Controlo de Alterações, corrigir o excerto indicado e analisar cada alteração antes de a aceitar ou rejeitar."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar o ficheiro na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Indicar uma sugestão aceite, uma sugestão rejeitada e justificar ambas as decisões.",
-    "evidence": "Ficheiro 04 revisto nos dois locais e decisões fundamentadas no Moodle.",
-    "checklist": [
-      "Três substituições verificadas.",
-      "Ortografia e gramática analisadas criticamente.",
-      "Três comentários inseridos.",
-      "Controlo de Alterações utilizado."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI04.pdf",
     "workFiles": [
       {
-        "number": "04",
-        "title": "Revisão",
-        "expectedName": "04_Revisao.docx",
-        "wordUrl": "assets/ficheiros/Word/04_Revisao.docx",
+        "number": "2",
+        "title": "Livro 2 - Formatação e Apresentação",
+        "expectedName": "UFCD0778_Livro2_Formatacao_Apresentacao.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro2_Formatacao_Apresentacao.xlsx",
         "available": true
       }
     ]
@@ -381,66 +304,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-5",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI5 - Alinhar e preparar para impressão",
-    "intro": "Alinhar informação com precisão e preparar um documento para diferentes condições de impressão.",
-    "objective": "Alinhar informação com precisão e preparar um documento para diferentes condições de impressão.",
+    "title": "TI5 - Criar fórmulas e utilizar referências relativas",
+    "intro": "Construir fórmulas corretas e utilizar referências relativas em cálculos copiados.",
+    "objective": "Construir fórmulas corretas e utilizar referências relativas em cálculos copiados.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Tabulações» e guardar como «2026-07_05_Tabulacoes_PrimeiroNome.docx»."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Demonstrar tabulações à esquerda, centrada, à direita e decimal; criar também preenchimento por pontos, sem recorrer a espaços consecutivos."
+        "text": "Abrir o Livro 3, criar as fórmulas pedidas, copiar os cálculos e verificar os resultados."
       },
       {
-        "title": "Realizar",
-        "text": "Realizar «Impressão» e guardar como «2026-07_06_Impressao_PrimeiroNome.docx»."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar secções A4 vertical e horizontal, aplicar margens diferentes e controlar quebras de página e de secção."
-      },
-      {
-        "title": "Realizar",
-        "text": "Explorar a pré-visualização, páginas selecionadas, frente e verso e várias páginas por folha."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar um envelope e uma folha de etiquetas com dados fictícios."
-      },
-      {
-        "title": "Realizar",
-        "text": "Corrigir páginas vazias, elementos cortados e quebras inadequadas."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar os dois ficheiros na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar por que não se devem usar espaços para alinhar informação e descrever dois problemas corrigidos na pré-visualização.",
-    "evidence": "Ficheiros 05 e 06 concluídos nos dois locais e diagnóstico registado no Moodle.",
-    "checklist": [
-      "Quatro tipos de tabulação demonstrados.",
-      "Nenhum alinhamento feito com espaços consecutivos.",
-      "Secções vertical e horizontal corretas.",
-      "Paginação verificada e corrigida."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI05.pdf",
     "workFiles": [
       {
-        "number": "05",
-        "title": "Tabulações",
-        "expectedName": "05_Tabulacoes.docx",
-        "wordUrl": "assets/ficheiros/Word/05_Tabulacoes.docx",
-        "available": true
-      },
-      {
-        "number": "06",
-        "title": "Impressão",
-        "expectedName": "06_Impressao.docx",
-        "wordUrl": "assets/ficheiros/Word/06_Impressao.docx",
+        "number": "3",
+        "title": "Livro 3 - Fórmulas e Referências",
+        "expectedName": "UFCD0778_Livro3_Formulas_Referencias.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro3_Formulas_Referencias.xlsx",
         "available": true
       }
     ]
@@ -448,59 +340,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-6",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI6 - Criar e formatar tabelas",
-    "intro": "Construir e transformar uma tabela complexa, garantindo organização e legibilidade.",
-    "objective": "Construir e transformar uma tabela complexa, garantindo organização e legibilidade.",
+    "title": "TI6 - Aplicar referências absolutas e mistas e corrigir erros",
+    "intro": "Utilizar referências absolutas e mistas e diagnosticar e corrigir erros em fórmulas.",
+    "objective": "Utilizar referências absolutas e mistas e diagnosticar e corrigir erros em fórmulas.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Tabelas» e guardar como «2026-07_07_Tabelas_PrimeiroNome.docx»."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar uma tabela com, pelo menos, cinco colunas e oito linhas."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir e eliminar linhas e colunas; unir e dividir células; dividir e voltar a unir a tabela."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Ordenar registos e aplicar uma fórmula simples numa célula."
+        "text": "Abrir a versão concluída na TI05, criar uma nova cópia e aplicar os três tipos de referência e as correções indicadas."
       },
       {
-        "title": "Realizar",
-        "text": "Definir larguras, alturas, margens internas e alinhamento vertical."
-      },
-      {
-        "title": "Realizar",
-        "text": "Aplicar limites e sombreados coerentes; repetir o cabeçalho nas páginas seguintes e impedir a divisão inadequada de linhas."
-      },
-      {
-        "title": "Realizar",
-        "text": "Adicionar uma legenda e confirmar que nenhum conteúdo fica cortado."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar o ficheiro na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Indicar três alterações estruturais e justificar uma decisão de formatação.",
-    "evidence": "Ficheiro 07 funcional nos dois locais e decisões registadas no Moodle.",
-    "checklist": [
-      "Dimensão mínima cumprida.",
-      "Operações estruturais realizadas.",
-      "Ordenação e fórmula verificadas.",
-      "Tabela legível, legendada e sem texto cortado."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI06.pdf",
     "workFiles": [
       {
-        "number": "07",
-        "title": "Tabelas",
-        "expectedName": "07_Tabelas.docx",
-        "wordUrl": "assets/ficheiros/Word/07_Tabelas.docx",
+        "number": "3",
+        "title": "Livro 3 - Fórmulas e Referências",
+        "expectedName": "UFCD0778_Livro3_Formulas_Referencias.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro3_Formulas_Referencias.xlsx",
         "available": true
       }
     ]
@@ -508,62 +376,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-7",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI7 - Criar uma composição editorial",
-    "intro": "Criar uma página editorial em colunas e integrar elementos gráficos com função comunicativa.",
-    "objective": "Criar uma página editorial em colunas e integrar elementos gráficos com função comunicativa.",
+    "title": "TI7 - Aplicar funções estatísticas e de contagem",
+    "intro": "Aplicar funções estatísticas e de contagem e interpretar os resultados obtidos.",
+    "objective": "Aplicar funções estatísticas e de contagem e interpretar os resultados obtidos.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Colunas» e guardar como «2026-07_08_Colunas_PrimeiroNome.docx»."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar áreas de uma, duas e três colunas, usando quebras de secção contínuas e uma quebra de coluna."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Realizar «Elementos visuais» e guardar como «2026-07_09_Elementos_Visuais_PrimeiroNome.docx»."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir duas imagens com fonte, recorte, legenda, texto alternativo e dois tipos de moldagem."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar uma composição com uma forma, um ícone e uma caixa de texto; alinhar, distribuir e agrupar os elementos relacionados."
+        "text": "Abrir o Livro 4, aplicar as funções pedidas e confirmar se os intervalos e resultados são adequados."
       },
       {
         "title": "Verificar",
-        "text": "Verificar a ordem de leitura, o contraste, a legibilidade e a estabilidade dos elementos."
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar os dois ficheiros na estrutura definida pela formadora, mantendo a organização entre computador e Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar a diferença entre quebra de coluna e quebra de secção e justificar duas decisões de acessibilidade ou legibilidade.",
-    "evidence": "Ficheiros 08 e 09 concluídos nos dois locais e decisões registadas no Moodle.",
-    "checklist": [
-      "Áreas de uma, duas e três colunas presentes.",
-      "Quebras utilizadas corretamente.",
-      "Imagens com fonte, legenda e texto alternativo.",
-      "Composição alinhada e agrupada."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI07.pdf",
     "workFiles": [
       {
-        "number": "08",
-        "title": "Colunas",
-        "expectedName": "08_Colunas.docx",
-        "wordUrl": "assets/ficheiros/Word/08_Colunas.docx",
-        "available": true
-      },
-      {
-        "number": "09",
-        "title": "Elementos visuais",
-        "expectedName": "09_Elementos_visuais.docx",
-        "wordUrl": "assets/ficheiros/Word/09_Elementos_visuais.docx",
+        "number": "4",
+        "title": "Livro 4 - Funções e Análise",
+        "expectedName": "UFCD0778_Livro4_Funcoes_Analise.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro4_Funcoes_Analise.xlsx",
         "available": true
       }
     ]
@@ -571,74 +412,42 @@ const individualTasks = [
   {
     "id": "tarefa-individual-8",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI8 - Configurar páginas, cabeçalhos e rodapés",
-    "intro": "Controlar a configuração, a identidade e a paginação de diferentes secções e preparar uma cópia em Livro dobrado.",
-    "objective": "Controlar a configuração, a identidade e a paginação de diferentes secções e preparar uma cópia em Livro dobrado.",
+    "title": "TI8 - Aplicar funções financeiras e iniciar o Projeto Final",
+    "intro": "Aplicar funções financeiras, comparar cenários e iniciar a organização dos dados do Projeto Final.",
+    "objective": "Aplicar funções financeiras, comparar cenários e iniciar a organização dos dados do Projeto Final.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Cabeçalhos e rodapés» e guardar como 2026-07_10_Cabecalhos_PrimeiroNome.docx."
-      },
-      {
-        "title": "Configurar",
-        "text": "Configurar a primeira página diferente, páginas pares e ímpares diferentes, numeração automática e a opção «Ligar ao anterior»."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar três secções funcionais e configurar cabeçalhos e rodapés independentes."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Realizar «Configuração de página», guardar como 2026-07_11_Configuracao_PrimeiroNome.docx e concluir as experiências de tamanho e orientação, margens, quebras, marca de água e pré-visualização."
+        "text": "Concluir a segunda versão do Livro 4 e criar o ficheiro inicial do Projeto Final em desenvolvimento."
       },
       {
-        "title": "Criar",
-        "text": "Criar uma nova cópia com quatro páginas e guardá-la como 2026-07_11_Configuracao_Livro_PrimeiroNome.docx."
-      },
-      {
-        "title": "Confirmar",
-        "text": "Confirmar que o número total de páginas da nova cópia é múltiplo de quatro."
-      },
-      {
-        "title": "Realizar",
-        "text": "Aplicar «Livro dobrado», definir uma margem de encadernação adequada e verificar a disposição em Ficheiro → Imprimir."
-      },
-      {
-        "title": "Realizar",
-        "text": "Se estiver disponível, observar também a opção de impressão frente e verso pelo lado mais curto. Não é necessário imprimir."
-      },
-      {
-        "title": "Realizar",
-        "text": "Se a versão utilizada não disponibilizar «Livro dobrado», identificar a versão, explicar a limitação e indicar como a configuração seria realizada no Word para computador."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar os três ficheiros na pasta «Tarefas individuais» do computador e na pasta com o mesmo nome na Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar a finalidade de «Livro dobrado», indicar o que observou na pré-visualização e registar qualquer limitação da versão utilizada.",
-    "evidence": "Ficheiros 10 e 11 concluídos, incluindo a cópia em Livro dobrado, nos dois locais; resultado ou limitação da versão registado no Moodle.",
-    "checklist": [
-      "Ficheiro 10 — Cabeçalhos, rodapés e secções",
-      "Primeira página e páginas pares/ímpares configuradas.  Três secções funcionais.  Cabeçalhos e rodapés independentes.  Paginação automática e sequencial correta.",
-      "Ficheiro 11 — Configuração de página",
-      "Experiências propostas no ficheiro 11 concluídas.  Cópia com quatro páginas configurada em Livro dobrado.  Pré-visualização da impressão verificada.  Eventual limitação da versão utilizada identificada e registada."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI08.pdf",
     "workFiles": [
       {
-        "number": "10",
-        "title": "Cabeçalhos e rodapés",
-        "expectedName": "10_Cabecalhos_e_rodapes.docx",
-        "wordUrl": "assets/ficheiros/Word/10_Cabeçalhos_e_rodapes.docx",
+        "number": "4",
+        "title": "Livro 4 - Funções e Análise",
+        "expectedName": "UFCD0778_Livro4_Funcoes_Analise.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro4_Funcoes_Analise.xlsx",
         "available": true
       },
       {
-        "number": "11",
-        "title": "Configuração de página",
-        "expectedName": "11_Configuracao_de_pagina.docx",
-        "wordUrl": "assets/ficheiros/Word/11_Configuracao_de_pagina.docx",
+        "number": "6",
+        "title": "Projeto Final",
+        "expectedName": "UFCD0778_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
     ]
@@ -646,57 +455,42 @@ const individualTasks = [
   {
     "id": "tarefa-individual-9",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI9 - Estruturar um documento longo",
-    "intro": "Estruturar um documento longo com estilos, capítulos e secções consistentes.",
-    "objective": "Estruturar um documento longo com estilos, capítulos e secções consistentes.",
+    "title": "TI9 - Criar tabelas, ordenar e filtrar dados",
+    "intro": "Estruturar dados como tabela e aplicar ordenações e filtros simples e combinados.",
+    "objective": "Estruturar dados como tabela e aplicar ordenações e filtros simples e combinados.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «Estilos e documentos longos» e guardar como 2026-07_12_Documento_Longo_PrimeiroNome.docx."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Organizar pelo menos três capítulos e seis subsecções, aplicando os estilos Título 1, Título 2 e, quando necessário, Título 3."
-      },
-      {
-        "title": "Realizar",
-        "text": "Modificar um dos estilos utilizados e verificar a propagação automática da alteração ao longo do documento."
-      },
-      {
-        "title": "Realizar",
-        "text": "Associar uma lista multinível à hierarquia dos títulos."
-      },
-      {
-        "title": "Utilizar",
-        "text": "Utilizar quebras de página e de secção adequadas."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar cabeçalhos independentes e aplicar paginação automática."
+        "text": "Abrir o Livro 5, criar a primeira versão com tabelas, ordenações e filtros e continuar o Projeto Final."
       },
       {
         "title": "Verificar",
-        "text": "Verificar toda a hierarquia no Painel de Navegação e corrigir eventuais títulos fora de nível."
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar o ficheiro na pasta «Tarefas individuais» do computador e na pasta com o mesmo nome na Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar como os estilos facilitaram a alteração global e a navegação no documento.",
-    "evidence": "Ficheiro 12 estruturado nos dois locais e reflexão registada no Moodle.",
-    "checklist": [
-      "Estrutura mínima cumprida.  Estilos e lista multinível coerentes.  Secções, cabeçalhos e paginação corretos.  Alteração global de um estilo verificada.  Hierarquia validada no Painel de Navegação.",
-      "As funcionalidades experimentadas nesta tarefa deverão ser aplicadas posteriormente no Projeto Final — Documento Profissional, sempre que forem adequadas ao conteúdo desenvolvido."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI09.pdf",
     "workFiles": [
       {
-        "number": "12",
-        "title": "Estilos e documentos longos",
-        "expectedName": "12_Estilos_e_documentos_longos.docx",
-        "wordUrl": "assets/ficheiros/Word/12_Estilos_e_documentos_longos.docx",
+        "number": "5",
+        "title": "Livro 5 - Gestão e Análise de Dados",
+        "expectedName": "UFCD0778_Livro5_Gestao_Analise_Dados.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro5_Gestao_Analise_Dados.xlsx",
+        "available": true
+      },
+      {
+        "number": "6",
+        "title": "Projeto Final",
+        "expectedName": "UFCD0778_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
     ]
@@ -704,76 +498,42 @@ const individualTasks = [
   {
     "id": "tarefa-individual-10",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI10 - Criar índices e navegar rapidamente",
-    "intro": "Construir e testar um sistema completo de navegação e referências internas.",
-    "objective": "Construir e testar um sistema completo de navegação e referências internas.",
+    "title": "TI10 - Criar tabelas e gráficos dinâmicos com segmentações",
+    "intro": "Criar tabelas e gráficos dinâmicos e utilizar segmentações para explorar os dados.",
+    "objective": "Criar tabelas e gráficos dinâmicos e utilizar segmentações para explorar os dados.",
     "steps": [
       {
-        "title": "Realizar",
-        "text": "Realizar «13_Inserir_o_seu_primeiro_indice.docx» e guardar como 2026-07_13_Indice_PrimeiroNome.docx."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir e personalizar um índice automático."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Demonstrar as duas opções de atualização — apenas os números de página e o índice inteiro — sem editar manualmente o índice."
+        "text": "Abrir a versão concluída na TI09, criar análises dinâmicas e atualizar o Projeto Final em desenvolvimento."
       },
       {
-        "title": "Realizar",
-        "text": "Realizar «Navegação e referências» e guardar como 2026-07_14_Navegacao_PrimeiroNome.docx."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar dois marcadores e duas hiperligações internas."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir duas referências cruzadas: uma para um título e outra para uma figura ou tabela."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir legendas nas figuras ou tabelas utilizadas."
-      },
-      {
-        "title": "Inserir",
-        "text": "Inserir pelo menos uma nota de rodapé."
-      },
-      {
-        "title": "Testar",
-        "text": "Testar o Painel de Navegação e os comandos Localizar e Ir para."
-      },
-      {
-        "title": "Realizar",
-        "text": "Atualizar todos os campos e testar as hiperligações e referências."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar os dois ficheiros na pasta «Tarefas individuais» do computador e na pasta com o mesmo nome na Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Explicar a diferença entre as opções de atualização do índice e confirmar o teste das ligações e referências.",
-    "evidence": "Ficheiros 13 e 14 navegáveis nos dois locais e testes registados no Moodle.",
-    "checklist": [
-      "Índice automático inserido e atualizado.  Duas opções de atualização do índice testadas.  Dois marcadores e duas hiperligações internas funcionais.  Duas referências cruzadas funcionais.  Legendas e uma nota de rodapé inseridas.  Todos os campos, hiperligações e referências testados.",
-      "Os elementos trabalhados nesta tarefa deverão ser utilizados posteriormente no Projeto Final — Documento Profissional, de acordo com os requisitos do respetivo enunciado."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI10.pdf",
     "workFiles": [
       {
-        "number": "13",
-        "title": "Inserir o seu primeiro índice",
-        "expectedName": "13_Inserir_o_seu_primeiro_indice.docx",
-        "wordUrl": "assets/ficheiros/Word/13_Inserir_o_seu_primeiro_indice.docx",
+        "number": "5",
+        "title": "Livro 5 - Gestão e Análise de Dados",
+        "expectedName": "UFCD0778_Livro5_Gestao_Analise_Dados.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro5_Gestao_Analise_Dados.xlsx",
         "available": true
       },
       {
-        "number": "14",
-        "title": "Navegação e referências",
-        "expectedName": "14_Navegacao_e_referencias.docx",
-        "wordUrl": "assets/ficheiros/Word/14_Navegação_e_referencias.docx",
+        "number": "6",
+        "title": "Projeto Final",
+        "expectedName": "UFCD0778_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
     ]
@@ -781,137 +541,35 @@ const individualTasks = [
   {
     "id": "tarefa-individual-11",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI11 - Desenvolver e realizar a revisão entre pares do Projeto Final",
-    "intro": "Desenvolver o Projeto Final — Documento Profissional e melhorar o documento através de uma revisão entre pares fundamentada.",
-    "objective": "Desenvolver o Projeto Final — Documento Profissional e melhorar o documento através de uma revisão entre pares fundamentada.",
+    "title": "TI11 - Concluir o Projeto Final e realizar a revisão entre pares",
+    "intro": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de revisão entre pares.",
+    "objective": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de revisão entre pares.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir a versão em desenvolvimento do Projeto Final — Documento Profissional."
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Desenvolver e organizar os conteúdos obrigatórios indicados no respetivo enunciado."
+        "text": "Validar o projeto, guardar a versão para revisão, trocar uma cópia com um colega e registar as melhorias."
       },
       {
-        "title": "Confirmar",
-        "text": "Confirmar que o documento contém:"
-      },
-      {
-        "title": "Realizar",
-        "text": "capa;"
-      },
-      {
-        "title": "Realizar",
-        "text": "índice;"
-      },
-      {
-        "title": "Realizar",
-        "text": "introdução;"
-      },
-      {
-        "title": "Realizar",
-        "text": "desenvolvimento;"
-      },
-      {
-        "title": "Realizar",
-        "text": "conclusão;"
-      },
-      {
-        "title": "Realizar",
-        "text": "referências;"
-      },
-      {
-        "title": "Realizar",
-        "text": "anexos, quando necessários."
-      },
-      {
-        "title": "Realizar",
-        "text": "Aplicar uma hierarquia coerente com os estilos Título 1, Título 2 e Título 3."
-      },
-      {
-        "title": "Realizar",
-        "text": "Integrar os elementos técnicos obrigatórios indicados no enunciado do Projeto Final."
-      },
-      {
-        "title": "Realizar",
-        "text": "Explicar e demonstrar a impressão em série, de acordo com o enunciado."
-      },
-      {
-        "title": "Realizar",
-        "text": "Identificar e explicar eventuais funcionalidades que não estejam disponíveis na versão do Word utilizada."
-      },
-      {
-        "title": "Confirmar",
-        "text": "Confirmar que o documento apresenta entre 8 e 12 páginas de conteúdo e não ultrapassa 20 páginas no total, incluindo os anexos."
+        "title": "Verificar",
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar a versão em desenvolvimento como 2026-07_15_Projeto_Final_Desenvolvimento_PrimeiroNome.docx."
-      },
-      {
-        "title": "Criar",
-        "text": "Criar uma cópia para revisão com o nome 2026-07_16_Revisao_Entre_Pares_PrimeiroNome.docx."
-      },
-      {
-        "title": "Realizar",
-        "text": "Trocar a cópia com um/a colega da sala, sem trabalhar simultaneamente no mesmo ficheiro."
-      },
-      {
-        "title": "Realizar",
-        "text": "O/A colega deve ativar o Controlo de Alterações e efetuar pelo menos cinco propostas de alteração pertinentes."
-      },
-      {
-        "title": "Realizar",
-        "text": "O/A colega deve inserir pelo menos três comentários:"
-      },
-      {
-        "title": "Realizar",
-        "text": "um aspeto positivo;"
-      },
-      {
-        "title": "Realizar",
-        "text": "uma melhoria de conteúdo;"
-      },
-      {
-        "title": "Realizar",
-        "text": "uma melhoria de apresentação ou legibilidade."
-      },
-      {
-        "title": "Realizar",
-        "text": "No final do documento, o/a colega deve escrever um feedback entre 80 e 120 palavras, identificando os pontos fortes e as prioridades de melhoria."
-      },
-      {
-        "title": "Realizar",
-        "text": "Depois de receber o ficheiro revisto, analisar cada alteração e comentário, sem apagar ou aceitar todas as alterações antes de concluir a análise."
-      },
-      {
-        "title": "Realizar",
-        "text": "Preparar as decisões sobre as sugestões que serão aplicadas na TI12."
-      },
-      {
-        "title": "Guardar",
-        "text": "Guardar os dois ficheiros na pasta «Tarefas individuais» do computador e na pasta com o mesmo nome na Drive."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Identificar o colega revisor, resumir o feedback recebido e indicar duas sugestões que serão aplicadas e uma que não será aplicada, justificando as decisões.",
-    "evidence": "Projeto Final desenvolvido; ficheiros 15 e 16 guardados nos dois locais; revisão entre pares concluída com alterações, comentários e feedback do/a colega; decisões do/a autor/a registadas no Moodle.",
-    "checklist": [
-      "Estrutura obrigatória do Projeto Final completa.  Conteúdos do Projeto Final desenvolvidos.  Três níveis de títulos aplicados corretamente.  Elementos técnicos obrigatórios integrados.  Impressão em série explicada e demonstrada.  Limitações da versão identificadas, quando aplicável.  Limites de páginas verificados.  Pelo menos cinco alterações registadas.  Pelo menos três comentários inseridos.  Feedback entre 80 e 120 palavras.  Feedback recebido analisado.  Decisões do/a autor/a justificadas no Moodle."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI11.pdf",
     "workFiles": [
       {
-        "title": "Enunciado do Projeto Final",
-        "expectedName": "Projeto_Final_Enunciado.docx",
-        "wordUrl": "assets/ficheiros/Word/Projeto_Final_Enunciado.docx",
-        "available": true
-      },
-      {
-        "title": "Resolução demonstrativa",
-        "expectedName": "Projeto_Final_Resolucao_Exemplo_Demonstrativo.docx",
-        "wordUrl": "assets/ficheiros/Word/Projeto_Final_Resolucao_Exemplo_Demonstrativo.docx",
+        "number": "6",
+        "title": "Projeto Final",
+        "expectedName": "UFCD0778_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
     ]
@@ -919,157 +577,44 @@ const individualTasks = [
   {
     "id": "tarefa-individual-12",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI12 - Concluir, partilhar e refletir",
-    "intro": "Concluir o Projeto Final — Documento Profissional, aplicar o feedback recebido, verificar o funcionamento do documento e preparar as versões finais em DOCX e PDF.",
-    "objective": "Concluir o Projeto Final — Documento Profissional, aplicar o feedback recebido, verificar o funcionamento do documento e preparar as versões finais em DOCX e PDF.",
+    "title": "TI12 - Apresentar e refletir sobre o Projeto Final",
+    "intro": "Criar a versão final, apresentar o projeto e refletir sobre as aprendizagens realizadas.",
+    "objective": "Criar a versão final, apresentar o projeto e refletir sobre as aprendizagens realizadas.",
     "steps": [
       {
-        "title": "Criar",
-        "text": "Criar uma nova cópia da versão do Projeto Final revista na TI11."
-      },
-      {
-        "title": "Guardar",
-        "text": "Guardar a cópia com o nome 2026-07_Projeto_Final_PrimeiroNome.docx."
+        "title": "Abrir",
+        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
       },
       {
         "title": "Realizar",
-        "text": "Analisar o feedback recebido durante a revisão entre pares e aplicar as melhorias pertinentes."
-      },
-      {
-        "title": "Realizar",
-        "text": "Registar as principais alterações realizadas e justificar qualquer sugestão que não seja aplicada."
-      },
-      {
-        "title": "Executar",
-        "text": "Executar a revisão ortográfica e gramatical e confirmar que o idioma de revisão está definido como Português de Portugal."
+        "text": "Aplicar as melhorias finais, guardar o XLSX e o PDF, testar a ligação e preparar a apresentação."
       },
       {
         "title": "Verificar",
-        "text": "Verificar os estilos, listas, tabelas, imagens, cabeçalhos, rodapés, numeração e quebras."
-      },
-      {
-        "title": "Realizar",
-        "text": "Atualizar:"
-      },
-      {
-        "title": "Realizar",
-        "text": "o índice;"
-      },
-      {
-        "title": "Realizar",
-        "text": "os índices de figuras e tabelas;"
-      },
-      {
-        "title": "Realizar",
-        "text": "as legendas;"
-      },
-      {
-        "title": "Realizar",
-        "text": "as referências cruzadas;"
-      },
-      {
-        "title": "Realizar",
-        "text": "as hiperligações;"
-      },
-      {
-        "title": "Realizar",
-        "text": "os restantes campos automáticos."
-      },
-      {
-        "title": "Testar",
-        "text": "Testar as hiperligações, referências e a navegação interna."
-      },
-      {
-        "title": "Executar",
-        "text": "Executar a verificação de acessibilidade e analisar os problemas identificados."
-      },
-      {
-        "title": "Realizar",
-        "text": "Em Ficheiro → Imprimir, confirmar a paginação, as margens, a orientação e a disposição de todas as páginas."
-      },
-      {
-        "title": "Confirmar",
-        "text": "Confirmar que o documento apresenta entre 8 e 12 páginas de conteúdo e não ultrapassa 20 páginas no total, incluindo os anexos."
-      },
-      {
-        "title": "Realizar",
-        "text": "Escrever uma reflexão individual final com 5 a 8 frases e entre 150 e 200 palavras, considerando:"
-      },
-      {
-        "title": "Realizar",
-        "text": "os conhecimentos aplicados;"
-      },
-      {
-        "title": "Realizar",
-        "text": "a funcionalidade considerada mais útil;"
-      },
-      {
-        "title": "Realizar",
-        "text": "uma dificuldade e a respetiva solução;"
-      },
-      {
-        "title": "Realizar",
-        "text": "uma melhoria resultante da revisão entre pares;"
-      },
-      {
-        "title": "Realizar",
-        "text": "o que faria de forma diferente."
+        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
       },
       {
         "title": "Guardar",
-        "text": "Guardar o DOCX final e exportar o documento como 2026-07_Projeto_Final_PrimeiroNome.pdf."
-      },
-      {
-        "title": "Abrir",
-        "text": "Abrir e verificar os dois ficheiros, confirmando que o conteúdo e a paginação estão corretos."
-      },
-      {
-        "title": "Guardar",
-        "text": "Guardar o DOCX e o PDF na pasta «Tarefas individuais» do computador e na pasta com o mesmo nome na Drive."
-      },
-      {
-        "title": "Configurar",
-        "text": "Configurar a partilha do PDF como «Qualquer pessoa com a ligação» e «Leitor»."
-      },
-      {
-        "title": "Testar",
-        "text": "Testar a ligação, preferencialmente numa janela privada, e confirmar que o PDF abre sem permitir alterações."
-      },
-      {
-        "title": "Publicar",
-        "text": "Publicar a ligação de leitura no Moodle."
+        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
       }
     ],
-    "moodleRecord": "Publicar a ligação de leitura para o PDF final, confirmar que foi testada sem sessão iniciada e registar as principais decisões relativas ao feedback recebido.",
-    "evidence": "Projeto Final concluído; DOCX e PDF finais guardados nos dois locais; feedback tratado; reflexão concluída; ligação de leitura configurada, testada e publicada no Moodle.",
-    "checklist": [
-      "Feedback entre pares analisado e correções pertinentes aplicadas.  Sugestões não aplicadas identificadas e justificadas.  Revisão linguística e verificação de acessibilidade realizadas.  Índices, campos, legendas, referências cruzadas, hiperligações e paginação atualizados.  Navegação interna e ligações testadas.  Pré-visualização da impressão verificada.  Limites de páginas confirmados.  Reflexão final com 5 a 8 frases e entre 150 e 200 palavras.  Ficheiros DOCX e PDF abertos e verificados.  Ligação de partilha configurada como Leitor e testada.  Ligação publicada no Moodle."
-    ],
-    "forumUrls": individualTaskForumUrls,
+    "forumUrls": [],
     "pdfUrl": "assets/pdfs/TI12.pdf",
     "workFiles": [
       {
-        "title": "Enunciado do Projeto Final",
-        "expectedName": "Projeto_Final_Enunciado.docx",
-        "wordUrl": "assets/ficheiros/Word/Projeto_Final_Enunciado.docx",
-        "available": true
-      },
-      {
-        "title": "Resolução demonstrativa",
-        "expectedName": "Projeto_Final_Resolucao_Exemplo_Demonstrativo.docx",
-        "wordUrl": "assets/ficheiros/Word/Projeto_Final_Resolucao_Exemplo_Demonstrativo.docx",
+        "number": "6",
+        "title": "Projeto Final",
+        "expectedName": "UFCD0778_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
     ]
   }
 ];
-const optionalWordMaterials = [
-  { number: "17", title: "Tour pelo Word", description: "Material complementar opcional. Não é necessário para concluir as TI, não integra os requisitos do Projeto Final e não entra nos critérios de avaliação.", wordUrl: "assets/ficheiros/Word/17_Tour.docx", available: true },
-  { number: "18", title: "Pedidos do Copilot para o Word", description: "Material complementar opcional. Não é necessário para concluir as TI, não integra os requisitos do Projeto Final e não entra nos critérios de avaliação.", wordUrl: "assets/ficheiros/Word/18_Pedidos do Copilot para o Word.docx", available: true }
-];
+const optionalExcelMaterials = [];
 const resources = [
-  { id: "manual", title: "Manual de formação", intro: "Manual de Formação da UFCD 0754 em PDF.", url: "recursos/manual.html", pdfUrl: "assets/pdfs/Ufcd 0754 Manual.pdf" },
-  { id: "suporte-word", title: "Suporte Microsoft Word", menuTitle: "Suporte Word", intro: "Página oficial de ajuda e suporte da Microsoft para o Word.", url: "recursos/suporte-word.html", externalUrl: "https://support.microsoft.com/pt-pt/word/" },
+  { id: "manual", title: "Manual de formação", intro: "Manual de Formação da UFCD 0778 em PDF.", url: "recursos/manual.html", pdfUrl: "assets/pdfs/UFCD0778_Manual.pdf" },
+  { id: "suporte-excel", title: "Suporte Microsoft Excel", menuTitle: "Suporte Excel", intro: "Página oficial de ajuda e suporte da Microsoft para o Excel.", url: "recursos/suporte-excel.html", externalUrl: "https://support.microsoft.com/pt-pt/excel" }
 ];
 const mainMenuItems = [
   { key: "inicio", label: "Início" },
@@ -1118,9 +663,9 @@ const siteVisibilitySectionMeta = {
   tarefasIndividuais: { secao: "tarefas_individuais", chave: "secao-tarefas-individuais", titulo: "Tarefas individuais", tipo: "secao", ordem: 60 }
 };
 
-const SITE_VISIBILITY_STORAGE_KEY = "ufcd0754-site-visibility-v1";
-const SITE_VISIBILITY_REMOTE_CACHE_KEY = "ufcd0754-site-visibility-remote-cache-v1";
-const SITE_LINKS_STORAGE_KEY = "ufcd0754-site-links-v1";
+const SITE_VISIBILITY_STORAGE_KEY = "ufcd0778-site-visibility-v1";
+const SITE_VISIBILITY_REMOTE_CACHE_KEY = "ufcd0778-site-visibility-remote-cache-v1";
+const SITE_LINKS_STORAGE_KEY = "ufcd0778-site-links-v1";
 const APPS_SCRIPT_SPREADSHEET_GID = "1240441816";
 const SITE_CONTROL_KEY_PREFIX = `ufcd-${UFCD.code}-`;
 let siteControlItems = [];
@@ -1185,6 +730,7 @@ function getBasePath() {
 }
 
 function construirUrlEmbedAvaliacao(embedUrl) {
+  if (/\/ufcd-0778\//.test(embedUrl)) return embedUrl;
   if (!embedUrl || !APPS_SCRIPT_SPREADSHEET_ID) return embedUrl;
 
   try {
@@ -1773,14 +1319,14 @@ function setupModals() {
 
 function getControlState() {
   try {
-    return JSON.parse(localStorage.getItem("ufcd0754-control-state")) || {};
+    return JSON.parse(localStorage.getItem("ufcd0778-control-state")) || {};
   } catch {
     return {};
   }
 }
 
 function saveControlState(state) {
-  localStorage.setItem("ufcd0754-control-state", JSON.stringify(state));
+  localStorage.setItem("ufcd0778-control-state", JSON.stringify(state));
 }
 
 function limparEstadoLocalDoSite() {
@@ -2316,11 +1862,11 @@ function renderSiteVisibilityControls() {
       <h3>Estado dos ficheiros das TIs</h3>
       ${individualTasks.map((task) => {
         const pdfStatus = task.pdfUrl ? "PDF OK" : "PDF em falta";
-        const wordFiles = task.workFiles || [];
-        const wordStatus = wordFiles.length
-          ? wordFiles.map((file) => `${file.title}: ${file.available && file.wordUrl ? "Word OK" : "Word em falta"}`).join(" · ")
-          : "Sem ficheiro Word associado";
-        return `<p><strong>${task.title}</strong><br><span>${pdfStatus}</span><span>${wordStatus}</span></p>`;
+        const excelFiles = task.workFiles || [];
+        const excelStatus = excelFiles.length
+          ? excelFiles.map((file) => `${file.title}: ${file.available && file.excelUrl ? "Excel OK" : "Excel em falta"}`).join(" · ")
+          : "Sem ficheiro Excel associado";
+        return `<p><strong>${task.title}</strong><br><span>${pdfStatus}</span><span>${excelStatus}</span></p>`;
       }).join("")}
     </div>
   `;
@@ -2825,7 +2371,7 @@ async function obterJsonAppsScript(params) {
 
 function obterJsonp(url) {
   return new Promise((resolve, reject) => {
-    const callbackName = `ufcd0754Callback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const callbackName = `ufcd0778Callback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
     const script = document.createElement("script");
     const separator = url.includes("?") ? "&" : "?";
     const timeoutId = window.setTimeout(() => {
@@ -2894,7 +2440,7 @@ function renderTopicPage() {
   const gammaUrl = obterGammaUrl(topic);
   const gammaDisponivel = Boolean(gammaUrl && isItemVisible("conteudos", topic.id));
   document.body.classList.toggle("gamma-view", gammaDisponivel);
-  document.title = `UFCD 0754 | ${topic.title}`;
+  document.title = `UFCD 0778 | ${topic.title}`;
   document.querySelectorAll("#submenu-conteudos a").forEach((link) => {
     const active = link.getAttribute("href")?.endsWith(topic.url);
     link.classList.toggle("active", Boolean(active));
@@ -2957,12 +2503,12 @@ function renderTopicPage() {
           <article class="card activity-card">
             <p class="eyebrow">Atividade</p>
             <h2>Experimenta</h2>
-            <p>${escapeHtml(lesson?.practice || "Aplica este conteúdo no documento de trabalho e confirma o resultado.")}</p>
+            <p>${escapeHtml(lesson?.practice || "Aplica este conteúdo no ficheiro de trabalho e confirma o resultado.")}</p>
           </article>
           <article class="card">
             <p class="eyebrow">Síntese</p>
             <h2>Antes de avançar</h2>
-            <p>Confirma se consegues identificar os comandos utilizados, explicar a sua finalidade e repetir o procedimento no teu documento sem depender do exemplo.</p>
+            <p>Confirma se consegues identificar os comandos utilizados, explicar a sua finalidade e repetir o procedimento no teu ficheiro sem depender do exemplo.</p>
           </article>
         </div>
         <aside class="card aside-box">
@@ -2999,7 +2545,7 @@ function renderActivityPage() {
     || evaluations.find((item) => item.id === evaluationId)
     || activities[0];
   const isEvaluation = evaluations.some((item) => item.id === activity.id);
-  document.title = `UFCD 0754 | ${activity.title}`;
+  document.title = `UFCD 0778 | ${activity.title}`;
 
   const activeSubmenu = document.getElementById(isEvaluation ? "submenu-avaliacao" : "submenu-atividades");
   activeSubmenu?.querySelectorAll("a").forEach((link) => {
@@ -3017,10 +2563,10 @@ function renderActivityPage() {
 
   if (activity.id === "projeto-final-apresentacao") {
     const projectColumns = [
-      ["Estrutura", "Capa, índice automático, introdução, desenvolvimento, conclusão, referências e anexos quando necessários."],
-      ["Formatação", "Hierarquia com Título 1, Título 2 e Título 3, estilos coerentes, cabeçalhos, rodapés e paginação."],
-      ["Elementos técnicos", "Tabelas, imagens, legendas, índices de figuras/tabelas quando aplicáveis, referências cruzadas, hiperligações, nota de rodapé e impressão em série explicada e demonstrada."],
-      ["Revisão e entrega", "Revisão entre pares, reflexão individual final, apresentação até 5 minutos, entrega em DOCX e PDF e ligação de leitura testada."]
+      ["Estrutura do livro", "Folha de apresentação, base de dados organizada como tabela e folhas de cálculo, análise e síntese claramente identificadas."],
+      ["Cálculos e controlo", "Fórmulas, referências, funções, validação de dados e tratamento de erros adequados ao tema escolhido."],
+      ["Análise e apresentação", "Ordenação, filtros, tabela dinâmica, gráfico dinâmico, segmentação de dados e preparação das folhas para impressão."],
+      ["Revisão e entrega", "Revisão entre pares, melhorias justificadas, reflexão individual, apresentação breve e entrega dos ficheiros XLSX e PDF."]
     ];
 
     root.innerHTML = `
@@ -3028,35 +2574,35 @@ function renderActivityPage() {
         <div class="section-inner">
           <div class="section-heading task-page-heading">
             <p class="eyebrow">Projeto Final</p>
-            <h1>Documento Profissional</h1>
-            <p class="lead">Construir um documento profissional único, claro e tecnicamente consistente, desenvolvido na TI11 e concluído na TI12.</p>
+            <h1>Solução em Folha de Cálculo</h1>
+            <p class="lead">Construir progressivamente um livro de cálculo funcional, claro e tecnicamente consistente, iniciado na TI08, desenvolvido nas TI09 e TI10, revisto na TI11 e concluído na TI12.</p>
           </div>
 
           <div class="activity-meta-grid">
             <article class="card activity-meta-card">
               <p class="eyebrow">Tema</p>
-              <h3>Documento Profissional</h3>
+              <h3>Solução em Folha de Cálculo</h3>
             </article>
             <article class="card activity-meta-card">
               <p class="eyebrow">Extensão</p>
-              <h3>8 a 12 páginas de conteúdo</h3>
+              <h3>estrutura e conteúdos definidos no enunciado</h3>
             </article>
             <article class="card activity-meta-card">
               <p class="eyebrow">Limite total</p>
-              <h3>Máximo 20 páginas</h3>
+              <h3>verificação global do livro</h3>
             </article>
           </div>
 
           <article class="card activity-card">
             <p class="eyebrow">Objetivo</p>
-            <h2>Finalizar e apresentar um documento profissional</h2>
-            <p>O projeto final aplica as competências trabalhadas na UFCD: estruturação, formatação, revisão, navegação, referências, elementos visuais, impressão em série e exportação para PDF.</p>
-            <p>A versão final deve existir em DOCX e PDF, com nomenclatura correta e ligação de leitura testada antes da publicação no Moodle.</p>
+            <h2>Finalizar e apresentar um livro de cálculo funcional</h2>
+            <p>O projeto final aplica as competências trabalhadas na UFCD: organização de dados, formatação, fórmulas, referências, funções, validação, ordenação, filtros, análise dinâmica, gráficos e preparação para impressão.</p>
+            <p>A versão final deve existir em XLSX e PDF, com nomenclatura correta e ligação de leitura testada antes da publicação no Moodle.</p>
             <div class="presentation-strip">
-              <span>Word</span>
-              <span>Documento longo</span>
+              <span>Excel</span>
+              <span>Livro funcional</span>
               <span>Revisão</span>
-              <span>Referências</span>
+              <span>Análise de dados</span>
               <span>PDF</span>
               <span>Apresentação</span>
             </div>
@@ -3066,22 +2612,22 @@ function renderActivityPage() {
             <summary>
               <span class="task-module-copy">
                 <strong>Enunciado final</strong>
-                <small>Requisitos que devem orientar o desenvolvimento na TI11 e a conclusão na TI12.</small>
+                <small>Requisitos que orientam o desenvolvimento progressivo entre a TI08 e a TI12.</small>
               </span>
               <span class="task-module-mark" aria-hidden="true">PF</span>
             </summary>
             <div class="task-module-body">
               <ul class="moodle-like-list">
-                <li>Documento com capa, índice automático, introdução, desenvolvimento, conclusão, referências e anexos quando necessários.</li>
-                <li>Hierarquia com Título 1, Título 2 e Título 3.</li>
-                <li>8 a 12 páginas de conteúdo e máximo de 20 páginas no total, incluindo anexos.</li>
-                <li>Estilos, cabeçalhos, rodapés, paginação, tabelas, imagens, legendas, referências cruzadas, hiperligações e nota de rodapé.</li>
-                <li>Impressão em série explicada e demonstrada, com identificação das limitações da versão do Word quando aplicável.</li>
+                <li>Folha inicial de apresentação do projeto, com título, identificação e explicação breve do objetivo do livro.</li>
+                <li>Base de dados organizada e formatada como tabela, com campos coerentes e dados adequados ao tema escolhido.</li>
+                <li>Fórmulas e funções com utilidade real, referências corretas, validação de dados e tratamento de erros quando aplicável.</li>
+                <li>Ordenação, filtros e análise através de tabela dinâmica, gráfico dinâmico e segmentação de dados.</li>
+                <li>Formatação consistente, gráficos legíveis e folhas preparadas para impressão e exportação para PDF.</li>
                 <li>Revisão entre pares, reflexão individual final e apresentação individual até 5 minutos.</li>
               </ul>
               <div class="embed-fallback resource-action-row align-right">
-                <a class="small-button" href="${getBasePath()}assets/ficheiros/Word/Projeto_Final_Enunciado.docx" target="_top" download>Descarregar enunciado  DOCX</a>
-                <a class="small-button secondary-link" href="${getBasePath()}assets/ficheiros/Word/Projeto_Final_Resolucao_Exemplo_Demonstrativo.docx" target="_top" download>Descarregar resolução demonstrativa  DOCX</a>
+                <a class="small-button" href="${getBasePath()}assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx" target="_top" download>Descarregar projeto  XLSX</a>
+
               </div>
             </div>
           </details>
@@ -3108,8 +2654,8 @@ function renderActivityPage() {
               <p class="eyebrow">Entrega</p>
               <h3>Ficheiros finais</h3>
               <ul class="clean-list task-prompt-list">
-                <li><strong>DOCX:</strong> 2026-07_Projeto_Final_PrimeiroNome.docx</li>
-                <li><strong>PDF:</strong> 2026-07_Projeto_Final_PrimeiroNome.pdf</li>
+                <li><strong>XLSX:</strong> 2026-MM_Projeto_Final_PrimeiroNome.xlsx</li>
+                <li><strong>PDF:</strong> 2026-MM_Projeto_Final_PrimeiroNome.pdf</li>
                 <li>Ambos guardados na pasta «Tarefas individuais» do computador e na Drive.</li>
                 <li>PDF partilhado como «Qualquer pessoa com a ligação» e «Leitor».</li>
               </ul>
@@ -3127,11 +2673,11 @@ function renderActivityPage() {
             <h2>Confirmar antes de concluir</h2>
             <ul class="clean-list task-prompt-list">
               <li>Feedback entre pares analisado e correções pertinentes aplicadas.</li>
-              <li>Índices, campos, legendas, referências cruzadas, hiperligações e paginação atualizados.</li>
-              <li>Revisão linguística e verificação de acessibilidade realizadas.</li>
-              <li>Limites de páginas confirmados.</li>
+              <li>Fórmulas, referências, funções e validações testadas sem erros inesperados.</li>
+              <li>Base de dados, tabelas dinâmicas, gráficos, filtros e segmentações atualizados.</li>
+              <li>Formatação, legibilidade, acessibilidade e configuração de impressão verificadas.</li>
               <li>Reflexão final concluída e apresentação até 5 minutos preparada.</li>
-              <li>DOCX e PDF abertos, verificados e guardados com a nomenclatura correta.</li>
+              <li>XLSX e PDF abertos, verificados e guardados com a nomenclatura correta.</li>
             </ul>
           </article>
         </div>
@@ -3161,7 +2707,7 @@ function renderActivityPage() {
               <span class="task-module-mark" aria-hidden="true">TG</span>
             </summary>
             <div class="task-module-body">
-              <p>Nesta atividade vamos construir um glossário colaborativo ao longo da UFCD 0754, com início no segundo dia.</p>
+              <p>Nesta atividade vamos construir um glossário colaborativo ao longo da UFCD 0778, com início no segundo dia.</p>
               <ul class="moodle-like-list">
                 ${overviewItems.map((item) => `<li>${item}</li>`).join("")}
               </ul>
@@ -3182,7 +2728,7 @@ function renderActivityPage() {
 
                 <div class="task-module-body">
                   <p>Tema associado: ${task.topic}.</p>
-                  <p><strong>Instruções:</strong> cada grupo trabalha a palavra atribuída, escreve uma definição clara por palavras próprias, acrescenta um exemplo ligado ao processador de texto e revê a entrada antes da publicação.</p>
+                  <p><strong>Instruções:</strong> cada grupo trabalha a palavra atribuída, escreve uma definição clara por palavras próprias, acrescenta um exemplo ligado ao folha de cálculo e revê a entrada antes da publicação.</p>
                   <p><strong>Evidência:</strong> entrada publicada no Glossário do Moodle com palavra, definição, exemplo e identificação do grupo.</p>
                   <p><strong>Publicação:</strong> Glossário do Moodle.</p>
 
@@ -3215,7 +2761,6 @@ function renderActivityPage() {
       return `<strong>${part.title}:</strong> ${instruction}`;
     });
     const getTaskPdfUrl = (task) => task.pdfUrl ? `${getBasePath()}${task.pdfUrl}` : "";
-    const individualTasksPdfUrl = `${getBasePath()}assets/pdfs/TIs.pdf`;
 
     const renderTaskPdfButton = (task, label = "Ver instruções  PDF") => task.pdfUrl
       ? `<button class="small-button" type="button" data-modal-open="pdf-${task.id}">${label}</button>`
@@ -3252,11 +2797,11 @@ function renderActivityPage() {
 
 
     const renderTaskFiles = (task) => {
-      const files = (task.workFiles || []).filter((file) => file.wordUrl || file.available !== false);
+      const files = (task.workFiles || []).filter((file) => file.excelUrl || file.available !== false);
       return files.map((file) => {
         const label = `${file.number ? `${file.number}  ` : ""}${file.title}`;
-        return file.available && file.wordUrl
-          ? `<a class="small-button" href="${getBasePath()}${file.wordUrl}" target="_top" download>Descarregar ${label}</a>`
+        return file.available && file.excelUrl
+          ? `<a class="small-button" href="${getBasePath()}${file.excelUrl}" target="_top" download>Descarregar ${label}</a>`
           : `<span class="task-link-pending">${label}: ficheiro brevemente disponível</span>`;
       }).join("");
     };
@@ -3303,7 +2848,7 @@ function renderActivityPage() {
           <div class="section-heading task-page-heading">
             <p class="eyebrow">Atividades</p>
             <h1>Tarefas Individuais</h1>
-            <p class="lead">Atividades práticas realizadas no Word e organizadas na pasta partilhada da Google Drive.</p>
+            <p class="lead">Atividades práticas realizadas no Excel e organizadas na pasta partilhada da Google Drive.</p>
           </div>
 
           <details class="task-overview-card" open>
@@ -3318,8 +2863,8 @@ function renderActivityPage() {
               <ul class="moodle-like-list">
                 ${overviewItems.map((item) => `<li>${item}</li>`).join("")}
               </ul>
-                      <div class="embed-fallback resource-action-row align-right">
-                <a class="small-button" href="${individualTasksPdfUrl}" target="_top">Abrir PDF das TIs</a>
+              <div class="embed-fallback resource-action-row align-right">
+                <a class="small-button" href="${getBasePath()}assets/pdfs/TI00.pdf" target="_top">Abrir instruções gerais — TI00</a>
               </div>
             </div>
           </details>
@@ -3339,8 +2884,8 @@ function renderActivityPage() {
                 <li>Não substituem nenhuma tarefa obrigatória.</li>
               </ul>
               <div class="embed-fallback resource-action-row align-right">
-                ${optionalWordMaterials.map((file) => file.available && file.wordUrl
-                  ? `<a class="small-button secondary-link" href="${getBasePath()}${file.wordUrl}" target="_top" download>Descarregar ${file.number}  ${file.title}</a>`
+                ${optionalExcelMaterials.map((file) => file.available && file.excelUrl
+                  ? `<a class="small-button secondary-link" href="${getBasePath()}${file.excelUrl}" target="_top" download>Descarregar ${file.number}  ${file.title}</a>`
                   : `<span class="task-link-pending">${file.number}  ${file.title}: ficheiro brevemente disponível</span>`
                 ).join("")}
               </div>
@@ -3521,7 +3066,7 @@ function renderResourcePage() {
   if (!root) return;
 
   const resource = resources.find((item) => item.id === document.body.dataset.resource) || resources[0];
-  document.title = `UFCD 0754 | ${resource.title}`;
+  document.title = `UFCD 0778 | ${resource.title}`;
 
   if (resource.gptUrl) {
     if (!isItemVisible("assistentesGpt", resource.id)) {
@@ -3590,7 +3135,7 @@ function renderResourcePage() {
     const pdfUrl = `${getBasePath()}${resource.pdfUrl}`;
     root.innerHTML = `
       <section class="pdf-reader-shell" aria-label="Leitor do manual em PDF">
-        <div class="pdf-open-card"><strong>Manual de Formação</strong><p>Consulta o manual completo da UFCD 0754 em formato PDF.</p></div>
+        <div class="pdf-open-card"><strong>Manual de Formação</strong><p>Consulta o manual completo da UFCD 0778 em formato PDF.</p></div>
         <div class="pdf-fallback">
           <a class="small-button" href="${pdfUrl}" target="_top">Abrir manual</a>
           <a class="small-button orange" href="${pdfUrl}" download>Descarregar PDF</a>
@@ -3671,10 +3216,10 @@ function renderResourcePage() {
           </div>
           <article class="card group-task-card external-resource-card">
             <p class="eyebrow">Recurso incorporado</p>
-            <h3>Ajuda oficial do Word</h3>
+            <h3>Ajuda oficial do Excel</h3>
             <p>A Microsoft pode bloquear a visualização dentro da página por política de segurança. Se a área abaixo não carregar, abre o recurso diretamente.</p>
             <div class="embed-fallback resource-action-row align-right">
-              <a class="small-button" href="${resource.externalUrl}" target="_blank" rel="noopener">Abrir suporte Microsoft Word</a>
+              <a class="small-button" href="${resource.externalUrl}" target="_blank" rel="noopener">Abrir suporte Microsoft Excel</a>
             </div>
           </article>
         </div>
@@ -3697,7 +3242,7 @@ function renderResourcePage() {
         <article class="card group-task-card">
           <p class="eyebrow">A preparar</p>
           <h3>Espaço reservado</h3>
-          <p>Este espaço ficará ligado aos materiais de apoio reais da UFCD 0754.</p>
+          <p>Este espaço ficará ligado aos materiais de apoio reais da UFCD 0778.</p>
         </article>
       </div>
     </section>
@@ -3708,7 +3253,7 @@ function renderStandaloneTeamsControlPage() {
   const root = document.getElementById("teams-control-root");
   if (!root) return;
 
-  document.title = "UFCD 0754 | Partilha de ecrã";
+  document.title = "UFCD 0778 | Partilha de ecrã";
   renderTeamsControl(root, { compact: false, publicView: false });
 }
 

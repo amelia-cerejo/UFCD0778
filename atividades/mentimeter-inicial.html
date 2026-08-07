@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UFCD 0754 | Mentimeter inicial</title>
+    <title>UFCD 0778 | Mentimeter inicial</title>
     <link rel="stylesheet" href="../assets/styles.css">
   </head>
   <body data-activity="mentimeter-inicial">
     <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <aside class="sidebar" aria-label="Menu principal">
-  <a class="brand" href="../index.html#inicio"><span class="brand-mark">0754</span><span><strong>Processador de Texto</strong></span></a>
+  <a class="brand" href="../index.html#inicio"><span class="brand-mark">0778</span><span><strong>Folha de Cálculo</strong></span></a>
   <nav class="side-nav">
     <a href="../index.html#inicio">In&iacute;cio</a>
     <a href="../index.html#objetivos">Objetivos</a>
@@ -27,6 +27,62 @@
     <main class="page-shell" id="activity-root"></main>
     <script src="../assets/config.js"></script>
     <script src="../assets/app.js?v=20260720-cache-refresh"></script>
+    <script>
+      (() => {
+        const presentationUrl = "https://www.mentimeter.com/app/presentation/alox8c2gpdwgm2ydmq86b36773zk6gsp/embed";
+        const participationUrl = "https://www.menti.com/alp5evxda36s";
+        const qrCodeUrl = "../assets/img/mentimeter_qr_code_0778.png";
+
+        function corrigirIdentificacao0778(elemento) {
+          const walker = document.createTreeWalker(elemento, NodeFilter.SHOW_TEXT);
+          const textos = [];
+
+          while (walker.nextNode()) textos.push(walker.currentNode);
+
+          textos.forEach((texto) => {
+            texto.nodeValue = texto.nodeValue
+              .replace(/Processador de Texto/gi, "Folha de Cálculo")
+              .replace(/Microsoft Word/gi, "Microsoft Excel")
+              .replace(/\bWord\b/gi, "Excel")
+              .replace(/\b0754\b/g, "0778");
+          });
+        }
+
+        function atualizarMentimeter0778() {
+          corrigirIdentificacao0778(document.body);
+
+          const frame = document.querySelector(".mentimeter-frame");
+          if (frame && frame.getAttribute("src") !== presentationUrl) {
+            frame.setAttribute("src", presentationUrl);
+          }
+
+          document.querySelectorAll(".mentimeter-embed-block a").forEach((link) => {
+            const label = link.textContent.trim();
+            if (label === "Abrir apresentação") {
+              link.setAttribute("href", presentationUrl);
+            }
+            if (label === "Participar" || label === "Abrir ligação de participação") {
+              link.setAttribute("href", participationUrl);
+            }
+          });
+
+          const qrCode = document.querySelector("#mentimeter-qr-modal img");
+          if (qrCode && qrCode.getAttribute("src") !== qrCodeUrl) {
+            qrCode.setAttribute("src", qrCodeUrl);
+          }
+        }
+
+        atualizarMentimeter0778();
+
+        const root = document.getElementById("activity-root");
+        if (root) {
+          new MutationObserver(atualizarMentimeter0778).observe(root, {
+            childList: true,
+            subtree: true
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
 
