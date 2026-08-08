@@ -2561,6 +2561,149 @@ function renderActivityPage() {
     return;
   }
 
+  if (activity.id === "resultados-diagnostica") {
+    const strengths = [
+      "Finalidade de uma folha de cálculo",
+      "Diferença entre livro e folha",
+      "Função MÉDIA",
+      "Preparação para impressão",
+      "Criação de gráficos"
+    ];
+    const reinforcementTopics = [
+      ["Referências relativas, absolutas e mistas", "Uma das áreas com mais respostas incorretas."],
+      ["CONTAR e CONTARA", "É necessário distinguir números de células preenchidas."],
+      ["Alça de preenchimento e séries", "A ferramenta ainda não é reconhecida por todos."],
+      ["Formatação numérica e moeda", "Importa distinguir formato e valor da célula."],
+      ["Filtros e ordenação", "As bases existem, mas precisam de aplicação prática."],
+      ["Agrupamento de objetos", "Tema ainda pouco seguro para parte da turma."]
+    ];
+    const expectations = [
+      ["Ganhar autonomia", "Realizar tarefas correntes no Excel com menos apoio e maior segurança."],
+      ["Dominar fórmulas", "Compreender operadores, referências e funções para obter resultados corretos."],
+      ["Organizar dados", "Criar tabelas claras, ordenar, filtrar e validar informação de forma eficiente."],
+      ["Analisar e comunicar", "Transformar dados em gráficos e resumos úteis para situações reais."],
+      ["Trabalhar com rigor", "Confirmar cálculos, formatos e impressão antes de partilhar um ficheiro."]
+    ];
+
+    root.innerHTML = `
+      <section class="section diagnostic-report">
+        <div class="section-inner">
+          <article class="card report-hero-card">
+            <p class="eyebrow">Avaliação diagnóstica · UFCD 0778</p>
+            <h1>Resultados da turma</h1>
+            <p class="lead">Esta avaliação identifica o ponto de partida da turma em folha de cálculo. Não tem caráter classificativo: orienta os conteúdos, o ritmo e os exercícios a desenvolver ao longo da formação.</p>
+          </article>
+
+          <div class="report-metric-grid" aria-label="Indicadores globais">
+            <article class="card report-metric-card"><span>Respostas</span><strong>13</strong><small>registadas</small></article>
+            <article class="card report-metric-card"><span>Formandos</span><strong>14</strong><small>esperados na análise</small></article>
+            <article class="card report-metric-card"><span>Participação</span><strong>93%</strong><small>taxa de resposta efetiva</small></article>
+            <article class="card report-metric-card"><span>Autoperceção</span><strong>3,21</strong><small>média numa escala de 1 a 5</small></article>
+          </div>
+
+          <div class="diagnostic-chart-grid" aria-label="Gráficos dos resultados globais">
+            <article class="card diagnostic-chart-card">
+              <div>
+                <p class="eyebrow">Participação</p>
+                <h2>13 de 14 respostas</h2>
+                <p>Uma participação muito elevada permite obter uma leitura representativa do ponto de partida da turma.</p>
+              </div>
+              <div class="diagnostic-donut" style="--chart-value: 93" role="img" aria-label="Taxa de participação: 93 por cento">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="donut-track" cx="60" cy="60" r="48"></circle>
+                  <circle class="donut-value" cx="60" cy="60" r="48" pathLength="100"></circle>
+                </svg>
+                <span><strong>93%</strong><small>participação</small></span>
+              </div>
+            </article>
+
+            <article class="card diagnostic-chart-card">
+              <div>
+                <p class="eyebrow">Autonomia percebida</p>
+                <h2>3,21 numa escala de 1 a 5</h2>
+                <p>A turma situa-se numa zona intermédia: já possui bases, mas espera ganhar confiança e trabalhar com menos ajuda.</p>
+              </div>
+              <div class="diagnostic-donut autonomy-chart" style="--chart-value: 64.2" role="img" aria-label="Autoperceção média: 3,21 em 5, equivalente a 64,2 por cento da escala">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="donut-track" cx="60" cy="60" r="48"></circle>
+                  <circle class="donut-value" cx="60" cy="60" r="48" pathLength="100"></circle>
+                </svg>
+                <span><strong>3,21</strong><small>em 5</small></span>
+              </div>
+            </article>
+          </div>
+
+          <article class="card diagnostic-theme-chart">
+            <div class="diagnostic-theme-heading">
+              <div><p class="eyebrow">Mapa dos temas</p><h2>Onde estão as bases e as prioridades</h2></div>
+              <p>Contagem das áreas destacadas no relatório — não representa uma classificação.</p>
+            </div>
+            <div class="theme-chart-row">
+              <span>Bases identificadas</span>
+              <div class="theme-chart-track"><i class="theme-chart-positive" style="--bar-value: 83.33%"></i></div>
+              <strong>5 temas</strong>
+            </div>
+            <div class="theme-chart-row">
+              <span>A reforçar</span>
+              <div class="theme-chart-track"><i class="theme-chart-priority" style="--bar-value: 100%"></i></div>
+              <strong>6 temas</strong>
+            </div>
+          </article>
+
+          <article class="card report-section-card">
+            <p class="eyebrow">Leitura global</p>
+            <h2>Bases úteis, com necessidade de consolidação prática</h2>
+            <p>A turma não parte do zero e revela conhecimentos iniciais positivos. A média de autoperceção de <strong>3,21 em 5</strong> indica que, em geral, os formandos conseguem realizar várias tarefas com alguma ajuda, mas ainda não com total autonomia e segurança.</p>
+            <p>Existem níveis diferentes de experiência. Alguns formandos poderão avançar com maior autonomia; outros beneficiarão de demonstrações passo a passo, exercícios orientados e validação frequente dos resultados.</p>
+          </article>
+
+          <div class="report-two-columns">
+            <article class="card report-section-card">
+              <p class="eyebrow">Pontos fortes</p>
+              <h2>Conhecimentos já presentes</h2>
+              <div class="report-tag-list">
+                ${strengths.map((item) => `<span>${item}</span>`).join("")}
+              </div>
+              <p>Muitos formandos já compreendem o papel da folha de cálculo no tratamento e apresentação de dados.</p>
+            </article>
+
+            <article class="card report-section-card">
+              <p class="eyebrow">Prioridades</p>
+              <h2>Temas a reforçar</h2>
+              <ul class="clean-list task-prompt-list">
+                ${reinforcementTopics.map(([topic, reason]) => `<li><strong>${topic}:</strong> ${reason}</li>`).join("")}
+              </ul>
+            </article>
+          </div>
+
+          <article class="card expectations-summary">
+            <div class="expectations-intro">
+              <p class="eyebrow">Resumo das expectativas</p>
+              <h2>O que a turma procura alcançar</h2>
+              <p>A leitura conjunta das respostas técnicas e da autoperceção aponta para uma expectativa central: passar de conhecimentos dispersos para uma utilização mais autónoma, segura e aplicada do Excel.</p>
+            </div>
+            <div class="expectations-grid">
+              ${expectations.map(([title, text], index) => `
+                <div class="expectation-item">
+                  <span>${String(index + 1).padStart(2, "0")}</span>
+                  <div><strong>${title}</strong><p>${text}</p></div>
+                </div>
+              `).join("")}
+            </div>
+          </article>
+
+          <article class="card report-callout report-section-card">
+            <p class="eyebrow">Mensagem à turma</p>
+            <h2>Um ponto de partida, não uma classificação</h2>
+            <p>As dificuldades identificadas são normais numa fase inicial e serão trabalhadas com exercícios práticos, exemplos guiados e momentos de revisão. O mais importante é praticar regularmente, confirmar os resultados e ganhar confiança na resolução de tarefas reais.</p>
+          </article>
+
+        </div>
+      </section>
+    `;
+    return;
+  }
+
   if (activity.id === "projeto-final-apresentacao") {
     const projectColumns = [
       ["Estrutura do livro", "Folha de apresentação, base de dados organizada como tabela e folhas de cálculo, análise e síntese claramente identificadas."],
