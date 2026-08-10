@@ -301,28 +301,40 @@ const individualTasks = [
       }
     ]
   },
-  {
+    {
     "id": "tarefa-individual-5",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI5 - Criar fórmulas e utilizar referências relativas",
-    "intro": "Construir fórmulas corretas e utilizar referências relativas em cálculos copiados.",
-    "objective": "Construir fórmulas corretas e utilizar referências relativas em cálculos copiados.",
+    "intro": "Construir fórmulas corretas, compreender a ordem das operações e utilizar referências relativas em cálculos repetidos.",
+    "objective": "Construir fórmulas corretas, compreender a ordem das operações e utilizar referências relativas em cálculos repetidos.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o ficheiro-base Livro 3 — Fórmulas e referências e guardar uma cópia com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Abrir o Livro 3, criar as fórmulas pedidas, copiar os cálculos e verificar os resultados."
+        "title": "Criar",
+        "text": "Criar fórmulas com os operadores de adição, subtração, multiplicação, divisão e exponenciação, começando sempre pelo sinal de igual."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Utilizar",
+        "text": "Utilizar parênteses para controlar a ordem de cálculo."
+      },
+      {
+        "title": "Construir",
+        "text": "Construir os cálculos utilizando referências de células (não valores fixos)."
+      },
+      {
+        "title": "Copiar",
+        "text": "Copiar as fórmulas para linhas adjacentes e observar a alteração automática das referências relativas."
+      },
+      {
+        "title": "Corrigir",
+        "text": "Corrigir erros de introdução ou referências incorretas encontrados durante a verificação."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar o livro no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -335,30 +347,43 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro3_Formulas_Referencias.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Explicar, através de um exemplo da tarefa, o que acontece a uma referência relativa quando a fórmula é copiada."
   },
-  {
+    {
     "id": "tarefa-individual-6",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI6 - Aplicar referências absolutas e mistas e corrigir erros",
-    "intro": "Utilizar referências absolutas e mistas e diagnosticar e corrigir erros em fórmulas.",
-    "objective": "Utilizar referências absolutas e mistas e diagnosticar e corrigir erros em fórmulas.",
+    "intro": "Selecionar o tipo de referência adequado a cada cálculo e diagnosticar erros frequentes em fórmulas.",
+    "objective": "Selecionar o tipo de referência adequado a cada cálculo e diagnosticar erros frequentes em fórmulas.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o ficheiro concluído na TI5 e criar uma nova cópia com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Abrir a versão concluída na TI05, criar uma nova cópia e aplicar os três tipos de referência e as correções indicadas."
+        "title": "Completar",
+        "text": "Completar os exercícios que exigem a fixação de uma célula através de uma referência absoluta ($A$1)."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Criar",
+        "text": "Criar fórmulas com referências mistas, fixando apenas a linha ou apenas a coluna, e copiá-las na matriz indicada."
+      },
+      {
+        "title": "Resolver",
+        "text": "Resolver o problema ##### alargando a coluna até o valor ficar visível."
+      },
+      {
+        "title": "Localizar",
+        "text": "Localizar e corrigir fórmulas com os erros #DIV/0!, #NOME?, #VALOR! e #REF!."
+      },
+      {
+        "title": "Utilizar",
+        "text": "Utilizar as ferramentas de auditoria para mostrar fórmulas e identificar precedentes ou dependentes."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar a nova versão no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -371,30 +396,43 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro3_Formulas_Referencias.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Apresentar um exemplo de referência absoluta e um de referência mista utilizados na tarefa e explicar por que foram necessários. Indicar também um erro de fórmula encontrado e como foi corrigido."
   },
-  {
+    {
     "id": "tarefa-individual-7",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI7 - Aplicar funções estatísticas e de contagem",
-    "intro": "Aplicar funções estatísticas e de contagem e interpretar os resultados obtidos.",
-    "objective": "Aplicar funções estatísticas e de contagem e interpretar os resultados obtidos.",
+    "intro": "Aplicar funções estatísticas e de contagem, escolhendo intervalos e argumentos adequados e interpretando os resultados obtidos.",
+    "objective": "Aplicar funções estatísticas e de contagem, escolhendo intervalos e argumentos adequados e interpretando os resultados obtidos.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o ficheiro-base Livro 4 — Funções e análise e guardar uma cópia com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Abrir o Livro 4, aplicar as funções pedidas e confirmar se os intervalos e resultados são adequados."
+        "title": "Aplicar",
+        "text": "Aplicar as funções SOMA, MÉDIA, MÍNIMO e MÁXIMO nos intervalos indicados."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Utilizar",
+        "text": "Utilizar CONTAR para contar células com valores numéricos e CONTARA para contar células com qualquer tipo de conteúdo."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Aplicar CONTAR.SE para contar registos que cumprem um critério específico."
+      },
+      {
+        "title": "Utilizar",
+        "text": "Utilizar o assistente de funções numa das propostas e escrever diretamente outra função na barra de fórmulas."
+      },
+      {
+        "title": "Corrigir",
+        "text": "Corrigir intervalos incompletos, argumentos inadequados e resultados incoerentes existentes na folha de diagnóstico."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar o livro no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -407,30 +445,47 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Livro4_Funcoes_Analise.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Escolher duas funções utilizadas, explicar o que calculam e interpretar um dos resultados obtidos. Indicar também a diferença entre CONTAR e CONTARA."
   },
-  {
+    {
     "id": "tarefa-individual-8",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI8 - Aplicar funções financeiras e iniciar o Projeto Final",
-    "intro": "Aplicar funções financeiras, comparar cenários e iniciar a organização dos dados do Projeto Final.",
-    "objective": "Aplicar funções financeiras, comparar cenários e iniciar a organização dos dados do Projeto Final.",
+    "intro": "Utilizar as funções PGTO e VF em cenários concretos e iniciar a preparação dos dados do Projeto Final.",
+    "objective": "Utilizar as funções PGTO e VF em cenários concretos e iniciar a preparação dos dados do Projeto Final.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o ficheiro concluído na TI7 e criar uma nova cópia com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Concluir a segunda versão do Livro 4 e criar o ficheiro inicial do Projeto Final em desenvolvimento."
+        "title": "Identificar",
+        "text": "Identificar, em cada cenário, o capital, a taxa anual, o prazo e a periodicidade dos pagamentos."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Converter",
+        "text": "Converter corretamente a taxa anual para a periodicidade utilizada (ex.: taxa mensal = taxa anual ÷ 12)."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Aplicar a função PGTO para calcular a prestação periódica de um empréstimo."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Aplicar a função VF para simular o valor futuro de uma poupança com depósitos periódicos regulares."
+      },
+      {
+        "title": "Criar",
+        "text": "Criar três cenários comparando o efeito de alterar uma variável de cada vez (taxa, prazo ou capital)."
+      },
+      {
+        "title": "Criar",
+        "text": "Criar o ficheiro inicial do Projeto Final e começar a introduzir e organizar os dados de origem."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar ambos os ficheiros no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -450,30 +505,55 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Registar uma conclusão baseada nos cenários financeiros e indicar o cuidado necessário ao compatibilizar taxa e periodicidade. Descrever também o tema e os dados escolhidos para o Projeto Final."
   },
-  {
+    {
     "id": "tarefa-individual-9",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI9 - Criar tabelas, ordenar e filtrar dados",
-    "intro": "Estruturar dados como tabela e aplicar ordenações e filtros simples e combinados.",
-    "objective": "Estruturar dados como tabela e aplicar ordenações e filtros simples e combinados.",
+    "intro": "Estruturar uma lista como tabela formatada, garantir a qualidade dos dados e utilizar ordenação e filtros para responder a questões concretas.",
+    "objective": "Estruturar uma lista como tabela formatada, garantir a qualidade dos dados e utilizar ordenação e filtros para responder a questões concretas.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
-      },
-      {
-        "title": "Realizar",
-        "text": "Abrir o Livro 5, criar a primeira versão com tabelas, ordenações e filtros e continuar o Projeto Final."
+        "text": "Abrir o ficheiro-base Livro 5 — Gestão e análise de dados e guardar uma cópia com o nome correto."
       },
       {
         "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "text": "Verificar se a lista possui um único cabeçalho por coluna, registos completos e ausência de linhas vazias internas."
+      },
+      {
+        "title": "Corrigir",
+        "text": "Corrigir incoerências de escrita, datas, números e categorias indicadas no enunciado."
+      },
+      {
+        "title": "Converter",
+        "text": "Converter o intervalo numa tabela formatada (Inserir > Tabela) e atribuir-lhe um nome claro e sem espaços."
+      },
+      {
+        "title": "Ativar",
+        "text": "Ativar a linha de totais e escolher o tipo de cálculo adequado a cada coluna."
+      },
+      {
+        "title": "Ordenar",
+        "text": "Ordenar os dados por um critério simples e depois por dois ou mais níveis."
+      },
+      {
+        "title": "Aplicar",
+        "text": "Aplicar filtros de texto, número e data para responder às questões apresentadas."
+      },
+      {
+        "title": "Limpar",
+        "text": "Limpar os filtros no final e confirmar que todos os registos estão visíveis."
+      },
+      {
+        "title": "Continuar",
+        "text": "Continuar o Projeto Final, aplicando a estrutura de tabela formatada aos dados de origem."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar ambos os ficheiros no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -493,30 +573,55 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Indicar uma questão respondida através da ordenação e outra através de filtros, apresentando os resultados encontrados."
   },
-  {
+    {
     "id": "tarefa-individual-10",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI10 - Criar tabelas e gráficos dinâmicos com segmentações",
-    "intro": "Criar tabelas e gráficos dinâmicos e utilizar segmentações para explorar os dados.",
-    "objective": "Criar tabelas e gráficos dinâmicos e utilizar segmentações para explorar os dados.",
+    "intro": "Resumir e explorar dados através de tabelas dinâmicas, gráficos dinâmicos e segmentações, garantindo a atualização correta da análise.",
+    "objective": "Resumir e explorar dados através de tabelas dinâmicas, gráficos dinâmicos e segmentações, garantindo a atualização correta da análise.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o ficheiro concluído na TI9 e criar uma nova cópia com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Abrir a versão concluída na TI09, criar análises dinâmicas e atualizar o Projeto Final em desenvolvimento."
+        "title": "Criar",
+        "text": "Criar uma tabela dinâmica numa nova folha e distribuir campos pelas áreas Filtros, Colunas, Linhas e Valores."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Alterar",
+        "text": "Alterar o tipo de resumo dos valores e o respetivo formato numérico quando necessário."
+      },
+      {
+        "title": "Criar",
+        "text": "Criar uma segunda tabela dinâmica com uma perspetiva de análise diferente."
+      },
+      {
+        "title": "Agrupar",
+        "text": "Agrupar datas por mês ou trimestre na tabela dinâmica."
+      },
+      {
+        "title": "Criar",
+        "text": "Criar um gráfico dinâmico associado à primeira tabela dinâmica."
+      },
+      {
+        "title": "Inserir",
+        "text": "Inserir pelo menos uma segmentação de dados e ligá-la às duas tabelas dinâmicas."
+      },
+      {
+        "title": "Alterar",
+        "text": "Alterar um registo na tabela de origem e atualizar as tabelas dinâmicas para demonstrar que a análise acompanha os dados."
+      },
+      {
+        "title": "Continuar",
+        "text": "Continuar o Projeto Final, criando a tabela dinâmica e o gráfico dinâmico com segmentações."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar ambos os ficheiros no computador e na Google Drive."
       }
     ],
     "forumUrls": [],
@@ -536,30 +641,43 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Explicar a diferença entre filtrar diretamente a tabela de origem e utilizar uma segmentação numa tabela dinâmica, indicando uma vantagem de cada opção."
   },
-  {
+    {
     "id": "tarefa-individual-11",
     "url": "atividades/tarefas-individuais.html",
     "title": "TI11 - Concluir o Projeto Final e realizar a revisão entre pares",
-    "intro": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de revisão entre pares.",
-    "objective": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de revisão entre pares.",
+    "intro": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de uma revisão entre pares estruturada.",
+    "objective": "Concluir a versão de desenvolvimento do Projeto Final e melhorá-la através de uma revisão entre pares estruturada.",
     "steps": [
       {
         "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "text": "Abrir o Projeto Final em desenvolvimento e guardar a versão de conclusão com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Validar o projeto, guardar a versão para revisão, trocar uma cópia com um colega e registar as melhorias."
+        "title": "Confirmar",
+        "text": "Confirmar que o livro inclui: tabela formatada, fórmulas, funções estatísticas e financeiras (PGTO e VF), ordenação e filtros, tabela dinâmica, gráfico dinâmico, segmentações e folhas preparadas para impressão."
       },
       {
         "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "text": "Verificar a coerência dos dados, os nomes das folhas, os títulos e os formatos numéricos."
       },
       {
-        "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "title": "Atualizar",
+        "text": "Atualizar as tabelas e gráficos dinâmicos e testar todas as segmentações."
+      },
+      {
+        "title": "Trocar",
+        "text": "Trocar o ficheiro com um/a colega para revisão e utilizar a grelha de análise fornecida pela formadora."
+      },
+      {
+        "title": "Registar",
+        "text": "Registar pelo menos três aspetos positivos e três melhorias necessárias no projeto do/a colega."
+      },
+      {
+        "title": "Analisar",
+        "text": "Analisar o feedback recebido e preparar as correções para a TI12."
       }
     ],
     "forumUrls": [],
@@ -572,30 +690,47 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Identificar o/a colega revisor/a, resumir o feedback recebido e indicar duas sugestões que serão aplicadas e uma que não será aplicada, justificando a decisão."
   },
-  {
+    {
     "id": "tarefa-individual-12",
     "url": "atividades/tarefas-individuais.html",
-    "title": "TI12 - Apresentar e refletir sobre o Projeto Final",
-    "intro": "Criar a versão final, apresentar o projeto e refletir sobre as aprendizagens realizadas.",
-    "objective": "Criar a versão final, apresentar o projeto e refletir sobre as aprendizagens realizadas.",
+    "title": "TI12 - Concluir, partilhar e refletir",
+    "intro": "Aplicar as melhorias pertinentes, validar todas as funcionalidades, preparar as versões finais e apresentar os resultados do Projeto Final.",
+    "objective": "Aplicar as melhorias pertinentes, validar todas as funcionalidades, preparar as versões finais e apresentar os resultados do Projeto Final.",
     "steps": [
       {
-        "title": "Abrir",
-        "text": "Abrir o ficheiro indicado e consultar o PDF da tarefa."
+        "title": "Criar",
+        "text": "Criar a versão final do projeto com o nome correto."
       },
       {
-        "title": "Realizar",
-        "text": "Aplicar as melhorias finais, guardar o XLSX e o PDF, testar a ligação e preparar a apresentação."
+        "title": "Aplicar",
+        "text": "Aplicar as correções pertinentes com base no feedback da revisão entre pares."
       },
       {
-        "title": "Verificar",
-        "text": "Confirmar os dados, cálculos, resultados, apresentação e critérios indicados no PDF."
+        "title": "Testar",
+        "text": "Testar todas as fórmulas, funções, tabelas dinâmicas, gráficos e segmentações."
+      },
+      {
+        "title": "Confirmar",
+        "text": "Confirmar que as folhas destinadas à impressão têm área de impressão, orientação, margens, cabeçalho e rodapé adequados."
+      },
+      {
+        "title": "Exportar",
+        "text": "Exportar as folhas indicadas para PDF e verificar o conteúdo e a paginação."
+      },
+      {
+        "title": "Preparar",
+        "text": "Preparar uma apresentação de cerca de cinco minutos sobre o projeto."
+      },
+      {
+        "title": "Escrever",
+        "text": "Escrever uma reflexão individual final com 5 a 8 frases e entre 150 e 200 palavras."
       },
       {
         "title": "Guardar",
-        "text": "Guardar com o nome definido no enunciado, no computador e na pasta Tarefas individuais da Drive."
+        "text": "Guardar XLSX e PDF finais na Drive, configurar a ligação do PDF como Leitor e publicar no Moodle."
       }
     ],
     "forumUrls": [],
@@ -608,7 +743,8 @@ const individualTasks = [
         "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
         "available": true
       }
-    ]
+    ],
+    "moodleRecord": "Publicar a ligação de leitura do PDF final, confirmar que foi testada e registar uma síntese das principais correções aplicadas após a revisão entre pares."
   }
 ];
 const optionalExcelMaterials = [];
@@ -2960,6 +3096,13 @@ function renderActivityPage() {
           <strong>O que fazer</strong>
           ${renderList(getEssentialSteps(task))}
         </div>
+
+        ${task.moodleRecord ? `
+          <div class="task-block task-moodle-record">
+            <strong>Registo no Moodle</strong>
+            <p>${task.moodleRecord}</p>
+          </div>
+        ` : ""}
 
         <aside class="task-note-box">
           <strong>Instruções completas</strong>
