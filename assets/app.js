@@ -1401,6 +1401,9 @@ function renderResourceMenus() {
         `).join("");
 
         if (!children.length) {
+          if (resource.gptUrl) {
+            return `<a href="${resource.gptUrl}" target="_blank" rel="noopener noreferrer">${resource.title}</a>`;
+          }
           return `<a href="${getBasePath()}${resource.url}" class="${isActive ? "active" : ""}">${resource.title}</a>`;
         }
 
@@ -3401,7 +3404,7 @@ function renderResourcePage() {
           <div class="section-heading task-page-heading">
             <p class="eyebrow">Recursos</p>
             <h1 class="resource-title-with-icon">
-              <a href="${resource.gptUrl}">
+              <a href="${resource.gptUrl}" target="_blank" rel="noopener noreferrer">
                 ${resource.menuIcon ? `<img src="${getBasePath()}${resource.menuIcon}" alt="" aria-hidden="true">` : ""}
                 <span>${resource.displayTitle || resource.title}</span>
               </a>
@@ -3432,7 +3435,7 @@ function renderResourcePage() {
               <h3>Abrir assistente</h3>
               <p>O assistente abre numa nova aba do navegador. Poderá ser necessário iniciar sessão no ChatGPT.</p>
               <div class="embed-fallback resource-action-row align-right">
-                <a class="small-button" href="${resource.gptUrl}">Abrir assistente</a>
+                <a class="small-button" href="${resource.gptUrl}" target="_blank" rel="noopener noreferrer">Abrir assistente</a>
               </div>
             </article>
           </div>
