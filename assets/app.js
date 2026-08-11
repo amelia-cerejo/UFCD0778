@@ -749,7 +749,32 @@ const individualTasks = [
 ];
 const optionalExcelMaterials = [];
 const resources = [
+  {
+    id: "videos-excel", title: "Vídeos",
+    intro: "Vídeos de apoio para compreender as funcionalidades essenciais da folha de cálculo e desmistificar a utilização de fórmulas.",
+    url: "recursos/videos-excel.html",
+    videos: [
+      { id: "dominar-folha-calculo", title: "Dominar a Folha de Cálculo", description: "Uma apresentação orientada das principais possibilidades da folha de cálculo e da sua utilização prática.", path: "assets/videos/Dominar_a_Folha_de_Cálculo.mp4" },
+      { id: "desmistificar-formulas-excel", title: "Desmistificar Fórmulas Excel", description: "Explicação acessível para compreender a lógica das fórmulas e começar a utilizá-las com confiança.", path: "assets/videos/Desmistificar_Fórmulas_Excel.mp4" }
+    ]
+  },
   { id: "manual", title: "Manual de formação", intro: "Manual de Formação da UFCD 0778 em PDF.", url: "recursos/manual.html", pdfUrl: "assets/pdfs/UFCD0778_Manual.pdf" },
+  {
+    id: "ficheiros-excel", title: "Ficheiros Excel",
+    intro: "Livros de Excel para explorar funcionalidades, acompanhar demonstrações e praticar os conteúdos da UFCD.",
+    url: "recursos/ficheiros-excel.html",
+    downloadFiles: [
+      { id: "novo-bem-vindo-excel", title: "Novo Bem-vindo ao Excel", description: "Livro introdutório para conhecer o ambiente de trabalho e começar a utilizar o Excel.", path: "assets/ficheiros/Excel/Novo Bem-vindo ao Excel.xlsx" },
+      { id: "web-bem-vindo-excel", title: "Bem-vindo ao Excel — versão Web", description: "Livro de apoio para explorar o Excel na versão utilizada através do navegador.", path: "assets/ficheiros/Excel/Web_Bem-vindo ao Excel.xlsx" },
+      { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx" }
+    ]
+  },
+  {
+    id: "assistentes-gpt", title: "Assistentes GPT", displayTitle: "Instrutor de Folha de Cálculo",
+    intro: "Assistente de apoio ao estudo e à realização das atividades de folha de cálculo.",
+    url: "recursos/assistentes-gpt.html",
+    gptUrl: "https://chatgpt.com/g/g-68fb60e069748191baa5d607b926b5e0-instrutor-de-folha-de-calculo"
+  },
   { id: "suporte-excel", title: "Suporte Microsoft Excel", menuTitle: "Suporte Excel", intro: "Página oficial de ajuda e suporte da Microsoft para o Excel.", url: "recursos/suporte-excel.html", externalUrl: "https://support.microsoft.com/pt-pt/excel" }
 ];
 const mainMenuItems = [
@@ -991,7 +1016,7 @@ function obterConstituicaoVisibilidadeSite() {
   resources.flatMap((resource) => [...(resource.videos || []), ...(resource.downloadFiles || [])]).forEach((file, index) => adicionarItem("ficheirosExcel", `ficheiro-excel-${file.id}`, file.title, file.path, file.path.endsWith(".mp4") ? "video_excel" : "ficheiro_excel", 45.1 + index));
 
   adicionarSecao("assistentesGpt");
-  resources.filter((resource) => resource.gptUrl).forEach((resource, index) => adicionarItem("assistentesGpt", `assistente-gpt-${resource.id}`, resource.title, resource.gptUrl, "assistente_gpt", 48.1 + index));
+  resources.filter((resource) => resource.gptUrl).forEach((resource, index) => adicionarItem("assistentesGpt", `assistente-gpt-${resource.id}`, resource.displayTitle || resource.title, resource.gptUrl, "assistente_gpt", 48.1 + index));
 
   adicionarSecao("tarefasGrupo");
   groupTasks.forEach((task, index) => adicionarItem("tarefasGrupo", `tarefa-grupo-${task.title}`, task.title, "atividades/tarefas-grupo.html", "tarefa_grupo", 51 + index, {
@@ -3361,7 +3386,7 @@ function renderResourcePage() {
           <div class="section-inner">
             <article class="card group-task-card">
               <p class="eyebrow">Recurso</p>
-              <h1>${resource.title}</h1>
+              <h1>${resource.displayTitle || resource.title}</h1>
               <p>Este assistente ainda não está disponível.</p>
             </article>
           </div>
@@ -3378,10 +3403,10 @@ function renderResourcePage() {
             <h1 class="resource-title-with-icon">
               <a href="${resource.gptUrl}">
                 ${resource.menuIcon ? `<img src="${getBasePath()}${resource.menuIcon}" alt="" aria-hidden="true">` : ""}
-                <span>${resource.title}</span>
+                <span>${resource.displayTitle || resource.title}</span>
               </a>
             </h1>
-            <p class="lead">Este assistente serve para apoiar o estudo dos utilitários complementares, ajudando a esclarecer dúvidas, rever procedimentos e orientar a realização das tarefas.</p>
+            <p class="lead">${resource.intro}</p>
           </div>
 
           <div class="resource-list">
@@ -3421,11 +3446,7 @@ function renderResourcePage() {
     const pdfUrl = `${getBasePath()}${resource.pdfUrl}`;
     root.innerHTML = `
       <section class="pdf-reader-shell" aria-label="Leitor do manual em PDF">
-        <div class="pdf-open-card"><strong>Manual de Formação</strong><p>Consulta o manual completo da UFCD 0778 em formato PDF.</p></div>
-        <div class="pdf-fallback">
-          <a class="small-button" href="${pdfUrl}" target="_top">Abrir manual</a>
-          <a class="small-button orange" href="${pdfUrl}" download>Descarregar PDF</a>
-        </div>
+        <iframe class="pdf-frame native-pdf-frame" src="${pdfUrl}#view=FitH" title="Manual de Formação da UFCD 0778"></iframe>
       </section>
     `;
     return;
@@ -3439,7 +3460,7 @@ function renderResourcePage() {
         <div class="section-inner">
           <div class="section-heading task-page-heading">
             <p class="eyebrow">Recursos</p>
-            <h1>${resource.title}</h1>
+            <h1>${resource.displayTitle || resource.title}</h1>
             <p class="lead">${resource.intro}</p>
           </div>
 
@@ -3497,7 +3518,7 @@ function renderResourcePage() {
         <div class="section-inner">
           <div class="section-heading task-page-heading">
             <p class="eyebrow">Recursos</p>
-            <h1>${resource.title}</h1>
+            <h1>${resource.displayTitle || resource.title}</h1>
             <p class="lead">${resource.intro}</p>
           </div>
           <article class="card group-task-card external-resource-card">
@@ -3522,7 +3543,7 @@ function renderResourcePage() {
       <div class="section-inner">
         <div class="section-heading task-page-heading">
           <p class="eyebrow">Recursos</p>
-          <h1>${resource.title}</h1>
+          <h1>${resource.displayTitle || resource.title}</h1>
           <p class="lead">${resource.intro}</p>
         </div>
         <article class="card group-task-card">
