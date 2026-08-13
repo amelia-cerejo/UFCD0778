@@ -766,7 +766,8 @@ const resources = [
     downloadFiles: [
       { id: "novo-bem-vindo-excel", title: "Novo Bem-vindo ao Excel", description: "Livro introdutório para conhecer o ambiente de trabalho e começar a utilizar o Excel.", path: "assets/ficheiros/Excel/Novo Bem-vindo ao Excel.xlsx" },
       { id: "web-bem-vindo-excel", title: "Bem-vindo ao Excel — versão Web", description: "Livro de apoio para explorar o Excel na versão utilizada através do navegador.", path: "assets/ficheiros/Excel/Web_Bem-vindo ao Excel.xlsx" },
-      { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx" }
+      { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx" },
+      { id: "resumo-conceitos", title: "Resumo de conceitos", description: "Livro de consulta rápida para rever e consolidar os principais conceitos de folha de cálculo.", path: "assets/ficheiros/Excel/Resumo de conceitos.xlsx" }
     ]
   },
   {
@@ -3490,7 +3491,8 @@ function renderResourcePage() {
 
           <div class="download-resource-list">
             ${visibleFiles.length ? visibleFiles.map((file, index) => {
-              const fileUrl = `${getBasePath()}${file.path}`;
+              const publicFileUrl = new URL(file.path, "https://ufcd0778.netlify.app/").href;
+              const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicFileUrl)}`;
               return `
                 <article class="card download-resource-card">
                   <span class="download-resource-number">${index + 1}</span>
@@ -3498,7 +3500,14 @@ function renderResourcePage() {
                     <h3>${file.title}</h3>
                     <p>${file.description}</p>
                   </div>
-                  <a class="small-button" href="${fileUrl}" download>Descarregar ficheiro</a>
+                  <div class="excel-viewer-wrap">
+                    <iframe
+                      class="excel-viewer-frame"
+                      src="${viewerUrl}"
+                      title="Visualização — ${file.title}"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"></iframe>
+                  </div>
                 </article>
               `;
             }).join("") : `
