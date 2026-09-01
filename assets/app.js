@@ -764,10 +764,10 @@ const resources = [
     intro: "Livros de Excel para explorar funcionalidades, acompanhar demonstrações e praticar os conteúdos da UFCD.",
     url: "recursos/ficheiros-excel.html",
     downloadFiles: [
-      { id: "novo-bem-vindo-excel", title: "Novo Bem-vindo ao Excel", description: "Livro introdutório para conhecer o ambiente de trabalho e começar a utilizar o Excel.", path: "assets/ficheiros/Excel/Novo Bem-vindo ao Excel.xlsx" },
-      { id: "web-bem-vindo-excel", title: "Bem-vindo ao Excel — versão Web", description: "Livro de apoio para explorar o Excel na versão utilizada através do navegador.", path: "assets/ficheiros/Excel/Web_Bem-vindo ao Excel.xlsx" },
-      { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx" },
-      { id: "resumo-conceitos", title: "Resumo de conceitos", description: "Livro de consulta rápida para rever e consolidar os principais conceitos de folha de cálculo.", path: "assets/ficheiros/Excel/Resumo de conceitos.xlsx" }
+      { id: "novo-bem-vindo-excel", title: "Novo Bem-vindo ao Excel", description: "Livro introdutório para conhecer o ambiente de trabalho e começar a utilizar o Excel.", path: "assets/ficheiros/Excel/Novo Bem-vindo ao Excel.xlsx", firstSheet: "Início" },
+      { id: "web-bem-vindo-excel", title: "Bem-vindo ao Excel — versão Web", description: "Livro de apoio para explorar o Excel na versão utilizada através do navegador.", path: "assets/ficheiros/Excel/Web_Bem-vindo ao Excel.xlsx", firstSheet: "Bem-vindo ao Excel" },
+      { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx", firstSheet: "Início" },
+      { id: "resumo-conceitos", title: "Resumo de conceitos", description: "Livro de consulta rápida para rever e consolidar os principais conceitos de folha de cálculo.", path: "assets/ficheiros/Excel/Resumo de conceitos.xlsx", firstSheet: "Referências" }
     ]
   },
   {
@@ -1863,7 +1863,7 @@ async function carregarVisibilidadeRemotaDoSite(options = {}) {
     ufcd: UFCD.code,
     prefixo: SITE_CONTROL_KEY_PREFIX,
     campos: "essenciais"
-  })
+  }, { timeoutMs: 6000 })
     .then((dados) => {
       if (dados?.sucesso && Array.isArray(dados.itens)) {
         aplicarItensVisibilidadeRemota(dados.itens);
@@ -2520,7 +2520,7 @@ function aguardar(ms) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
-async function obterJsonAppsScript(params) {
+async function obterJsonAppsScript(params, options = {}) {
   const url = new URL(APPS_SCRIPT_WEB_APP_URL);
   if (APPS_SCRIPT_SPREADSHEET_ID) {
     url.searchParams.set("spreadsheet_id", APPS_SCRIPT_SPREADSHEET_ID);
@@ -2531,10 +2531,10 @@ async function obterJsonAppsScript(params) {
     }
   });
   url.searchParams.set("_", String(Date.now()));
-  return obterJsonp(url.toString());
+  return obterJsonp(url.toString(), options.timeoutMs);
 }
 
-function obterJsonp(url) {
+function obterJsonp(url, timeoutMs = 30000) {
   return new Promise((resolve, reject) => {
     const callbackName = `ufcd0778Callback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
     const script = document.createElement("script");
@@ -2543,7 +2543,7 @@ function obterJsonp(url) {
       delete window[callbackName];
       script.remove();
       reject(new Error("Tempo excedido ao carregar dados do Apps Script."));
-    }, 30000);
+    }, timeoutMs);
 
     window[callbackName] = (dados) => {
       window.clearTimeout(timeoutId);
@@ -3376,6 +3376,32 @@ function renderActivityPage() {
   `;
 }
 
+function setupLazyExcelViewers(root = document) {
+  const frames = [...root.querySelectorAll("iframe.excel-viewer-frame[data-src]")];
+  if (!frames.length) return;
+
+  const carregarFrame = (frame) => {
+    if (!frame.dataset.src) return;
+    frame.src = frame.dataset.src;
+    frame.removeAttribute("data-src");
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    frames.forEach(carregarFrame);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      carregarFrame(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "400px 0px" });
+
+  frames.forEach((frame) => observer.observe(frame));
+}
+
 function renderResourcePage() {
   const root = document.getElementById("resource-root");
   if (!root) return;
@@ -3491,8 +3517,10 @@ function renderResourcePage() {
 
           <div class="download-resource-list">
             ${visibleFiles.length ? visibleFiles.map((file, index) => {
+              const fileUrl = resolvePageUrl(file.path);
               const publicFileUrl = new URL(file.path, "https://ufcd0778.netlify.app/").href;
-              const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicFileUrl)}`;
+              const activeCell = `'${file.firstSheet}'!A1`;
+              const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicFileUrl)}&ActiveCell=${encodeURIComponent(activeCell)}`;
               return `
                 <article class="card download-resource-card">
                   <span class="download-resource-number">${index + 1}</span>
@@ -3500,10 +3528,11 @@ function renderResourcePage() {
                     <h3>${file.title}</h3>
                     <p>${file.description}</p>
                   </div>
+                  <a class="small-button" href="${fileUrl}" download>Descarregar ficheiro</a>
                   <div class="excel-viewer-wrap">
                     <iframe
                       class="excel-viewer-frame"
-                      src="${viewerUrl}"
+                      data-src="${viewerUrl}"
                       title="Visualização — ${file.title}"
                       loading="lazy"
                       referrerpolicy="no-referrer"></iframe>
@@ -3521,6 +3550,7 @@ function renderResourcePage() {
         </div>
       </section>
     `;
+    setupLazyExcelViewers(root);
     return;
   }
 
@@ -3577,8 +3607,7 @@ function renderStandaloneTeamsControlPage() {
 }
 
 async function inicializarVisibilidadeRemotaDoSite(options = {}) {
-  const visibilidadeRemotaOk = await carregarVisibilidadeRemotaDoSite();
-  if (!visibilidadeRemotaOk) return;
+  const visibilidadeRemotaOk = await carregarVisibilidadeRemotaDoSite({ force: options.force });
 
   if (options.render !== false) {
     atualizarSuperficiesVisiveisDoSite();
@@ -3587,6 +3616,12 @@ async function inicializarVisibilidadeRemotaDoSite(options = {}) {
   const teamsRoot = document.getElementById("activity-root") || document.getElementById("teams-control-root");
   if (teamsRoot) {
     atualizarControlosVisibilidadeDoSite(teamsRoot);
+  }
+
+  if (!visibilidadeRemotaOk && options.retry !== false) {
+    window.setTimeout(() => {
+      void inicializarVisibilidadeRemotaDoSite({ force: true, retry: false });
+    }, 15000);
   }
 }
 
