@@ -501,8 +501,8 @@ const individualTasks = [
       {
         "number": "6",
         "title": "Projeto Final",
-        "expectedName": "UFCD0778_Projeto_Final.xlsx",
-        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
+        "expectedName": "UFCD0778_Base_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx",
         "available": true
       }
     ],
@@ -569,8 +569,8 @@ const individualTasks = [
       {
         "number": "6",
         "title": "Projeto Final",
-        "expectedName": "UFCD0778_Projeto_Final.xlsx",
-        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
+        "expectedName": "UFCD0778_Base_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx",
         "available": true
       }
     ],
@@ -637,8 +637,8 @@ const individualTasks = [
       {
         "number": "6",
         "title": "Projeto Final",
-        "expectedName": "UFCD0778_Projeto_Final.xlsx",
-        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
+        "expectedName": "UFCD0778_Base_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx",
         "available": true
       }
     ],
@@ -686,8 +686,8 @@ const individualTasks = [
       {
         "number": "6",
         "title": "Projeto Final",
-        "expectedName": "UFCD0778_Projeto_Final.xlsx",
-        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
+        "expectedName": "UFCD0778_Base_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx",
         "available": true
       }
     ],
@@ -739,8 +739,8 @@ const individualTasks = [
       {
         "number": "6",
         "title": "Projeto Final",
-        "expectedName": "UFCD0778_Projeto_Final.xlsx",
-        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx",
+        "expectedName": "UFCD0778_Base_Projeto_Final.xlsx",
+        "excelUrl": "assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx",
         "available": true
       }
     ],
@@ -2934,7 +2934,7 @@ function renderActivityPage() {
                 <li>Revisão entre pares, reflexão individual final e apresentação individual até 5 minutos.</li>
               </ul>
               <div class="embed-fallback resource-action-row align-right">
-                <a class="small-button" href="${getBasePath()}assets/ficheiros/Excel/UFCD0778_Projeto_Final.xlsx" target="_top" download>Descarregar projeto  XLSX</a>
+                <a class="small-button" href="${getBasePath()}assets/ficheiros/Excel/UFCD0778_Base_Projeto_Final.xlsx" target="_top" download>Descarregar base do projeto XLSX</a>
 
               </div>
             </div>
@@ -3517,7 +3517,7 @@ function renderResourcePage() {
 
           <div class="download-resource-list">
             ${visibleFiles.length ? visibleFiles.map((file, index) => {
-              const fileUrl = resolvePageUrl(file.path);
+              const fileUrl = `${getBasePath()}${file.path}`;
               const publicFileUrl = new URL(file.path, "https://ufcd0778.netlify.app/").href;
               const activeCell = `'${file.firstSheet}'!A1`;
               const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicFileUrl)}&ActiveCell=${encodeURIComponent(activeCell)}`;
