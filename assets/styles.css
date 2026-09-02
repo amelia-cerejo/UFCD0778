@@ -317,6 +317,7 @@ body.menu-open .sidebar {
   border-left: 3px solid var(--cor-folha);
 }
 
+.activity-child-links,
 .evaluation-child-links {
   margin: -2px 0 4px 12px;
   padding-left: 10px;
@@ -3514,6 +3515,12 @@ body.gamma-view .content-gamma-full {
 
 .activity-card {
   border-left: 7px solid var(--cor-contraste);
+}
+
+body[data-activity="alternativas-projeto"] .section-inner > .activity-card,
+body[data-activity="projeto-final-apresentacao"] #activity-root .section-inner > .activity-card {
+  margin-bottom: 26px;
+  padding: clamp(28px, 3.4vw, 40px);
 }
 
 .activity-pair {

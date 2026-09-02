@@ -126,7 +126,9 @@ const activities = [
   { id: "mentimeter-inicial", title: "Escreve 3 palavras", menuTitle: "Brainstorming", intro: "Quando pensas numa folha de cálculo, que três palavras te vêm à cabeça?", url: "atividades/mentimeter-inicial.html", focus: "Nuvem de palavras inicial", duration: "", product: "Resposta no Mentimeter: três palavras associadas a folha de cálculo.", mentimeterUrl: pendingLinks.mentimeterEmbedUrl, participationUrl: pendingLinks.mentimeterParticipationUrl, qrCode: "assets/img/mentimeter_qr_code_0778.png", steps: [{ title: "Pergunta", text: "Quando pensas numa folha de cálculo, que três palavras te vêm à cabeça?" }], evidence: ["Nuvem de palavras inicial"] },
   { id: "tarefas-grupo", title: "Glossário - Tarefas de Grupo", menuTitle: "Tarefas de Grupo", intro: "Tarefas de grupo para construir vocabulário técnico no Glossário do Moodle.", url: "atividades/tarefas-grupo.html", focus: "Glossário colaborativo", duration: "A partir do segundo dia", product: "Definição curta e exemplo prático aplicado à folha de cálculo.", steps: [{ title: "Distribuir", text: "Cada grupo trabalha o termo atribuído." }, { title: "Definir", text: "Escrever uma definição simples e correta." }, { title: "Exemplificar", text: "Acrescentar um exemplo aplicado ao Excel." }, { title: "Publicar", text: "Rever e publicar no Glossário do Moodle." }], evidence: ["Entrada no glossário", "Exemplo prático", "Revisão pelos colegas"] },
   { id: "tarefas-individuais", title: "Tarefas Individuais", intro: "Resumo das tarefas práticas realizadas nos livros Excel; as instruções completas são disponibilizadas em PDF.", url: "atividades/tarefas-individuais.html", focus: "Trabalho individual", duration: "A partir do segundo dia", product: "Livros Excel concluídos e guardados na Drive.", steps: [{ title: "Ler", text: "Consultar o enunciado e o PDF da tarefa." }, { title: "Realizar", text: "Aplicar os procedimentos no livro indicado." }, { title: "Verificar", text: "Confirmar fórmulas, resultados e apresentação." }, { title: "Guardar", text: "Guardar com o nome e na pasta definidos." }], evidence: ["Livro Excel atualizado", "Versão guardada na Drive"] },
-  { id: "projeto-final-apresentacao", title: "Projeto Final - Solução em Folha de Cálculo", menuTitle: "Projeto Final", intro: "Livro Excel funcional que integra organização, cálculos, análise, apresentação e preparação para impressão.", url: "atividades/projeto-final-apresentacao.html", focus: "Projeto individual", duration: "TI08 a TI12", product: "Livro Excel final, PDF, reflexão final e apresentação breve.", steps: [{ title: "Planear", text: "Escolher e estruturar o contexto do projeto." }, { title: "Construir", text: "Organizar dados e aplicar fórmulas, funções, formatação e análise." }, { title: "Rever", text: "Validar dados, cálculos, gráficos e impressão." }, { title: "Partilhar", text: "Guardar, apresentar e refletir sobre o resultado." }], evidence: ["XLSX final", "PDF final", "Reflexão final", "Apresentação individual"] }
+  { id: "resolucoes-livros", parentId: "tarefas-individuais", title: "Resoluções dos Livros", menuTitle: "Resoluções dos livros", intro: "Resoluções demonstrativas dos livros práticos 1 a 3.", url: "atividades/resolucoes-livros.html" },
+  { id: "projeto-final-apresentacao", title: "Projeto Final - Solução em Folha de Cálculo", menuTitle: "Projeto Final", intro: "Livro Excel funcional que integra organização, cálculos, análise, apresentação e preparação para impressão.", url: "atividades/projeto-final-apresentacao.html", focus: "Projeto individual", duration: "TI08 a TI12", product: "Livro Excel final, PDF, reflexão final e apresentação breve.", steps: [{ title: "Planear", text: "Escolher e estruturar o contexto do projeto." }, { title: "Construir", text: "Organizar dados e aplicar fórmulas, funções, formatação e análise." }, { title: "Rever", text: "Validar dados, cálculos, gráficos e impressão." }, { title: "Partilhar", text: "Guardar, apresentar e refletir sobre o resultado." }], evidence: ["XLSX final", "PDF final", "Reflexão final", "Apresentação individual"] },
+  { id: "alternativas-projeto", parentId: "projeto-final-apresentacao", title: "Alternativas de Projeto", menuTitle: "Outras alternativas", intro: "Contextos alternativos para desenvolver o Projeto Final com os mesmos requisitos técnicos.", url: "atividades/alternativas-projeto.html" }
 ];
 
 const evaluations = [
@@ -767,7 +769,7 @@ const resources = [
       { id: "novo-bem-vindo-excel", title: "Novo Bem-vindo ao Excel", description: "Livro introdutório para conhecer o ambiente de trabalho e começar a utilizar o Excel.", path: "assets/ficheiros/Excel/Novo Bem-vindo ao Excel.xlsx", firstSheet: "Início" },
       { id: "web-bem-vindo-excel", title: "Bem-vindo ao Excel — versão Web", description: "Livro de apoio para explorar o Excel na versão utilizada através do navegador.", path: "assets/ficheiros/Excel/Web_Bem-vindo ao Excel.xlsx", firstSheet: "Bem-vindo ao Excel" },
       { id: "formulas-excel", title: "Tutorial de Fórmulas", description: "Livro de apoio para explorar, compreender e praticar fórmulas no Excel.", path: "assets/ficheiros/Excel/Fórmulas.xlsx", firstSheet: "Início" },
-      { id: "resumo-conceitos", title: "Resumo de conceitos", description: "Livro de consulta rápida para rever e consolidar os principais conceitos de folha de cálculo.", path: "assets/ficheiros/Excel/Resumo de conceitos.xlsx", firstSheet: "Referências" }
+      { id: "resumo-conceitos", title: "Resumo de conceitos", description: "Livro de consulta rápida para rever e consolidar os principais conceitos de folha de cálculo.", path: "assets/ficheiros/Excel/Resumo de conceitos.xlsx", firstSheet: "Referências" },
     ]
   },
   {
@@ -1340,12 +1342,29 @@ function renderActivityMenus() {
       return;
     }
 
-    menu.innerHTML = activities.filter((activity) => isItemVisible("atividades", activity.id)).map((activity) => `
-      <a href="${getBasePath()}${activity.url}">${activity.menuTitle || activity.title}</a>
-    `).join("");
+    const currentActivity = document.body.dataset.activity || "";
+    menu.innerHTML = activities
+      .filter((activity) => !activity.parentId && isItemVisible("atividades", activity.id))
+      .map((activity) => {
+        const children = activities.filter((child) => child.parentId === activity.id && isItemVisible("atividades", child.id));
+        const isActive = currentActivity === activity.id;
+        const childLinks = children.map((child) => `
+          <a href="${getBasePath()}${child.url}" class="${currentActivity === child.id ? "active" : ""}">${child.menuTitle || child.title}</a>
+        `).join("");
+
+        if (!children.length) {
+          return `<a href="${getBasePath()}${activity.url}" class="${isActive ? "active" : ""}">${activity.menuTitle || activity.title}</a>`;
+        }
+
+        return `
+          <a href="${getBasePath()}${activity.url}" class="${isActive ? "active" : ""}">${activity.menuTitle || activity.title}</a>
+          <div class="submenu-group-children activity-child-links">
+            ${childLinks}
+          </div>
+        `;
+      }).join("");
   });
 }
-
 function renderEvaluationMenus() {
   document.querySelectorAll(".evaluation-submenu").forEach((menu) => {
     if (!isSectionVisible("avaliacao")) {
@@ -2988,6 +3007,10 @@ function renderActivityPage() {
               <li>XLSX e PDF abertos, verificados e guardados com a nomenclatura correta.</li>
             </ul>
           </article>
+
+          <div class="embed-fallback resource-action-row align-right project-alternatives-link">
+            <a class="small-button" href="alternativas-projeto.html">Preferes outro contexto? Consulta as Alternativas de Projeto</a>
+          </div>
         </div>
       </section>
     `;
