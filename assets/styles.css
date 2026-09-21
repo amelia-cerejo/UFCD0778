@@ -188,32 +188,26 @@ body.menu-open .sidebar {
 .side-nav a.portfolio-site-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-start;
   margin-top: 10px;
-  border: 1px solid rgba(56, 189, 248, 0.34);
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 14px;
   color: var(--cor-branco);
-  background: linear-gradient(135deg, var(--cor-principal), var(--cor-destaque));
-  box-shadow: 0 10px 22px rgba(0, 120, 212, 0.16);
-  font-weight: 800;
+  background: linear-gradient(100deg, #3f0794 0%, #8d2ddd 68%, #df7a24 100%);
+  box-shadow: 0 10px 22px rgba(74, 15, 155, 0.2);
+  font-weight: 900;
 }
 
 .side-nav a.portfolio-site-link::after {
-  content: "site";
-  border-radius: 999px;
-  padding: 2px 8px;
-  color: var(--cor-principal);
-  background: var(--cor-branco);
-  font-size: 0.72rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  content: none;
 }
 
 .side-nav a.portfolio-site-link:hover,
 .side-nav a.portfolio-site-link.active {
   color: var(--cor-branco);
-  background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
+  background: linear-gradient(100deg, #310570 0%, #7220bc 68%, #c66113 100%);
 }
 
 .side-nav a:focus-visible,
@@ -4606,14 +4600,14 @@ h2,
 }
 
 .side-nav a.portfolio-site-link {
-  border-color: rgba(43, 87, 154, 0.24);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  box-shadow: 0 12px 24px rgba(43, 87, 154, 0.16);
+  border: 0;
+  background: linear-gradient(100deg, #3f0794 0%, #8d2ddd 68%, #df7a24 100%);
+  box-shadow: 0 10px 22px rgba(74, 15, 155, 0.2);
 }
 
 .side-nav a.portfolio-site-link:hover,
 .side-nav a.portfolio-site-link.active {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-hover));
+  background: linear-gradient(100deg, #310570 0%, #7220bc 68%, #c66113 100%);
 }
 
 .hero-overlay {
